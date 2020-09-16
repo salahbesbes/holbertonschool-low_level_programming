@@ -1,2 +1,0 @@
-#!/bin/bash
-gcc -S -o $CFILE.c $CFILE.s
