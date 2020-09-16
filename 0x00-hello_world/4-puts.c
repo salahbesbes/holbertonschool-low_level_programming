@@ -3,8 +3,6 @@
 
 int main(void)
 {
-char str1[15];
-strcpy(str1, "\"holbertonschool-low_level_programming");
-puts(str1);
+puts("\"Programming is like building a multilingual puzzle");
 return (0);
 }
