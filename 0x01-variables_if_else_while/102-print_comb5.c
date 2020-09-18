@@ -1,5 +1,5 @@
 #include<stdio.h>
-/*
+/**
  * main - blalala
  *
  * Return: blabala
