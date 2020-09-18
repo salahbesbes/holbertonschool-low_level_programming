@@ -19,18 +19,16 @@ int main(void)
 		{
 			w = j / 10;
 			z = j % 10;
-			
-				putchar(x + '0');
-				putchar(y + '0');
+			putchar(x + '0');
+			putchar(y + '0');
+			putchar(' ');
+			putchar(w + '0');
+			putchar(z + '0');
+			if (i != 98)
+			{
+				putchar(',');
 				putchar(' ');
-				putchar(w + '0');
-				putchar(z + '0');
-				if (i != 98)
-				{
-					putchar(',');
-					putchar(' ');
-				}
-			
+			}
 		}
 	}
 	putchar('\n');
