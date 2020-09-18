@@ -12,11 +12,11 @@ int main(void)
 	{
 		x = i / 10;
 		y = i % 10;
-		for (j = 0; j < 100; j++)
+		for (j = i + 1; j < 100; j++)
 		{
 			w = j / 10;
 			z = j % 10;
-			if (i < j && x < w &&  y + 1 < z)
+			if (i < j && x <= w && y <= z)
 			{
 				putchar(x + '0');
 				putchar(y + '0');
