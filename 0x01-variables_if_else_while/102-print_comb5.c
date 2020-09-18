@@ -1,9 +1,12 @@
 #include<stdio.h>
-/**
- * main - blablabla
+/*
+ * main - blalala
  *
- * Return: blablabla
+ * Return: blabala
  */
+
+
+
 int main(void)
 {
 	int i, x, y, j, z, w;
@@ -16,8 +19,7 @@ int main(void)
 		{
 			w = j / 10;
 			z = j % 10;
-			if (i < j && x <= w && y <= z)
-			{
+			
 				putchar(x + '0');
 				putchar(y + '0');
 				putchar(' ');
@@ -28,7 +30,7 @@ int main(void)
 					putchar(',');
 					putchar(' ');
 				}
-			}
+			
 		}
 	}
 	putchar('\n');
