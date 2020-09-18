@@ -16,7 +16,7 @@ int main(void)
 		{
 			w = j / 10;
 			z = j % 10;
-			if (i != j && i < j && x < w &&  y < z)
+			if (i < j && x < w &&  y + 1 < z)
 			{
 				putchar(x + '0');
 				putchar(y + '0');
