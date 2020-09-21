@@ -1,4 +1,4 @@
-nclude "holberton.h"
+#include "holberton.h"
 
 /**
  * _isalpha - check the code for Holberton School students.
@@ -17,5 +17,5 @@ int _isalpha(int c)
 		result = 1;
 	else
 		result = 0;
-	return (0);
+	return (result);
 }
