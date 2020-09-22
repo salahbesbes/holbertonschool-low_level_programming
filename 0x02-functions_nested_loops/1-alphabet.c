@@ -1,4 +1,4 @@
-#include "holberton.h" 
+#include "holberton.h"
 /**
  * main - check the code for Holberton School students.
  *
@@ -13,6 +13,6 @@ int print_alphabet(void)
 	{
 		_putchar(i);
 	}
-	_putchar('\n');	
-	return (0);	
+	_putchar('\n');
+	return (0);
 }
