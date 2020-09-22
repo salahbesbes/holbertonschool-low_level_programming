@@ -7,10 +7,10 @@
  */
 
 
-int print_last_digit(int i)
+int print_last_digit(int n)
 {
 
-	int r = i % 10;
+	int r = n % 10;
 
 	if (r < 0)
 	{
