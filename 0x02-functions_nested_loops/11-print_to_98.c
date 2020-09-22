@@ -6,6 +6,7 @@
  *
  * Return: nb to 98
  * caseLessAndPositive - blablabla
+ * description: blablbalba
  * @n: blablabal
  *
  */
@@ -68,9 +69,7 @@ void caseNegative(int n)
 		{
 			_putchar('-');
 			if (z < 0)
-			{
 				_putchar(z * -1 + '0');
-			}
 			if (x < 0)
 				_putchar(x * -1 + '0');
 			_putchar(y * -1 + '0');
