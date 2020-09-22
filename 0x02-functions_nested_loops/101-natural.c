@@ -11,10 +11,9 @@ void main(void)
 
 	for (i = 0; i < 1024; i++)
 	{
-		if ((i % 3 == 0 || i % 5 == 0) && i % 15 != 0)
+		if (i % 3 == 0 || i % 5 == 0)
 			sum1 += i;
 	}
-	
-	printf("%d\n",sum1);
+	printf("%d\n", sum1);
 }
 
