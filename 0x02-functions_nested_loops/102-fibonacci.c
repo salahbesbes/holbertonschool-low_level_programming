@@ -8,7 +8,7 @@
  */
 int main(void)
 {
-	int i, t1 = 0, t2 = 1, nextTerm;
+	int i, t1 = 1, t2 = 2, nextTerm;
 
 	for (i = 1; i <= 50; ++i)
 	{
