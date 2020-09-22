@@ -66,9 +66,12 @@ void caseNegative(int n)
 		y = i % 10;
 		if (i < 0)
 		{
-			if (i >= 100)
+			_putchar('-');
+			if (z < 0)
+			{
 				_putchar(z * -1 + '0');
-			if (i >= 10)
+			}
+			if (x < 0)
 				_putchar(x * -1 + '0');
 			_putchar(y * -1 + '0');
 		}
@@ -89,7 +92,7 @@ void caseNegative(int n)
 }
 void print_to_98(int n)
 {
-	if (n <= 98 && n > 0)
+	if (n <= 98 && n >= 0)
 		caseLessAndPositive(n);
 	if (n > 98)
 		caseGreater(n);
@@ -97,3 +100,4 @@ void print_to_98(int n)
 		caseNegative(n);
 	_putchar('\n');
 }
+
