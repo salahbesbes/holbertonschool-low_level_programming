@@ -4,8 +4,6 @@
  * main - blablabal
  * Return: blablabla
  */
-
-
 int main(void)
 {
 	int i;
@@ -15,3 +13,4 @@ int main(void)
 
 	return (0);
 }
+
