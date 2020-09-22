@@ -5,16 +5,13 @@
  * Return: Always 0.
  */
 
-int main(void)
+void print_alphabet(void)
 {
-	char str[] = "Holberton";
 	int i;
 
-	for (i = 0; i < 9; i++)
+	for (i = 'a'; i <= 'z'; i++)
 	{
-		_putchar(str[i]);
+		_putchar(i);
 	}
 	_putchar('\n');
-	return (0);
 }
-
