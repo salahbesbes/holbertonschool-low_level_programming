@@ -15,7 +15,7 @@ int main(void)
 		nextTerm = t1 + t2;
 		t1 = t2;
 		t2 = nextTerm;
-		printf("%d, ", nextTerm);
+		printf("%d, ", t1);
 	}
 	printf("\n");
 	return (0);
