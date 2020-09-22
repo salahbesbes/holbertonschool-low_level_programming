@@ -8,14 +8,14 @@
  */
 int main(void)
 {
-	int i, t1 = 0, t2 = 1, nextTerm;
+	unsigned int i, t1 = 0, t2 = 1, nextTerm;
 
 	for (i = 1; i < 50; ++i)
 	{
 		nextTerm = t1 + t2;
 		t1 = t2;
 		t2 = nextTerm;
-		printf("%d, ", t1);
+		printf("%ul, ", t2);
 	}
 	printf("\n");
 	return (0);
