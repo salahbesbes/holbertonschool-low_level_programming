@@ -8,14 +8,15 @@
  */
 int main(void)
 {
-	long i, t1 = 0, t2 = 1, nextTerm;
+	int i;
+	long t1 = 0, t2 = 1, nextTerm;
 
-	for (i = 1; i < 50; ++i)
+	for (i = 1; i <= 50; ++i)
 	{
+		printf("%ld, ", nextTerm);
 		nextTerm = t1 + t2;
 		t1 = t2;
 		t2 = nextTerm;
-		printf("%ld, ", t2);
 	}
 	printf("\n");
 	return (0);
