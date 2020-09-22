@@ -5,7 +5,7 @@
  * Return: Always 0.
  */
 
-int main(void)
+void main(void)
 {
 	char str[] = "Holberton";
 	int i;
@@ -15,6 +15,5 @@ int main(void)
 		_putchar(str[i]);
 	}
 	_putchar('\n');
-	return (0);
 }
 
