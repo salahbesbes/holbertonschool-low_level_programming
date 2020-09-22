@@ -13,7 +13,10 @@ int main(void)
 
 	for (i = 1; i <= 50; ++i)
 	{
-		printf("%ld, ", nextTerm);
+		if (i == 50)
+			printf("%ld", nextTerm);
+		else
+			printf("%ld, ", nextTerm);
 		nextTerm = t1 + t2;
 		t1 = t2;
 		t2 = nextTerm;
