@@ -9,6 +9,7 @@
 int main(void)
 {
 	long t1 = 0, t2 = 1, nextTerm = 0, sum = 0;
+
 	while (nextTerm < 4000000)
 	{
 		nextTerm = t1 + t2;
@@ -17,7 +18,7 @@ int main(void)
 		t1 = t2;
 		t2 = nextTerm;
 	}
-	printf("%ld",sum);
+	printf("%ld", sum);
 	printf("\n");
 	return (0);
 }
