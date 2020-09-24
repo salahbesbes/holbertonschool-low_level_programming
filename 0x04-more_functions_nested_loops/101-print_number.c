@@ -11,8 +11,11 @@ void print_number(int n)
 
 	int y, num, m = 1;
 
-if (n <= 0)
-	n = n * -1;
+if (n < 0)
+{
+	_putchar('-');
+	n *= -1;
+}
 num = n;
 while (num != 0)
 {
