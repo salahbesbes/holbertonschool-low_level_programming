@@ -25,8 +25,10 @@ int main(void)
 		{
 			if (i % 15 == 0)
 				printf("FizzBuzz ");
-			else
+			else if (i != 100)
 				printf("Buzz ");
+			else 
+				printf("Buzz");
 		}
 		else
 			printf("%d ", i);
