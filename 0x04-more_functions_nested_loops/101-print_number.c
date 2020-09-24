@@ -1,5 +1,5 @@
 #include "holberton.h"
-
+#include <stdio.h>
 /**
  * print_number - check the code for Holberton School students.
  * @n: integer
@@ -8,25 +8,26 @@
 
 void print_number(int n)
 {
-	int x, y, z, w;
 
-	if (n < 0)
-	{
-		n = n * -1;
-		_putchar('-');
-	}
-	x = n / 1000;
-	y = n / 100 % 10;
-	z = n / 10 % 10;
-	w = n % 10;
-	if (n > 1000)
-		_putchar(x + '0');
-	if (n > 100)
+	int y, num, m = 1;
+
+if (n <= 0)
+	n = n * -1;
+num = n;
+while (num != 0)
+{
+	num /= 10;
+	m *= 10;
+}
+m /= 10;
+while (m != 1 && n != 0)
+{
+	y = n / m;
+	if (n > y * m)
 		_putchar(y + '0');
-	if (n > 10)
-		_putchar(z + '0');
-	_putchar(w + '0');
-
-
+	n %= m;
+	m /= 10;
+}
+_putchar(n % 10 + '0');
 }
 
