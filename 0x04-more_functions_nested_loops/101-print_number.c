@@ -9,29 +9,24 @@
 void print_number(int n)
 {
 
-	int y, num;
-	unsigned int m = 1;
 
+int i = 1;
+int num;
 if (n < 0)
 {
 	_putchar('-');
 	n *= -1;
 }
+
 num = n;
-while (num != 0)
-{
-	num /= 10;
-	m *= 10;
+do {
+	i *= 10;
+	n /= 10;
+} while (n);
+i /= 10;
+do {
+	_putchar(num / i + '0');
+	num %= i;
+	i /= 10;
+} while (num);
 }
-m /= 10;
-while (m != 1 && n != 0)
-{
-	y = n / m;
-
-	_putchar(y + '0');
-	n %= m;
-	m /= 10;
-}
-_putchar(n % 10 + '0');
-}
-
