@@ -4,13 +4,18 @@
 /**
  * _isupper - check the code for Holberton School students.
  *
+ * @c: integer
  * Return: Always 0.
  */
 int _isupper(int c)
 {
-	int i, result;
-	if ('c' >= 'A' && 'c'<= 'Z')
+	int result;
+
+	if (c >= 'A' && c <= 'Z')
 		result = 1;
-	result = 0;
-	return result;
+
+	else
+		result = 0;
+	return (result);
 }
+
