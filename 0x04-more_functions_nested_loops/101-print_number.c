@@ -9,7 +9,8 @@
 void print_number(int n)
 {
 
-	int y, num, m = 1;
+	int y, num;
+	unsigned int m = 1;
 
 if (n < 0)
 {
@@ -26,8 +27,8 @@ m /= 10;
 while (m != 1 && n != 0)
 {
 	y = n / m;
-	if (n > y * m)
-		_putchar(y + '0');
+
+	_putchar(y + '0');
 	n %= m;
 	m /= 10;
 }
