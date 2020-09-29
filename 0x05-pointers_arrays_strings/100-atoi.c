@@ -14,6 +14,7 @@ int _atoi(char *s)
 {
 	int j, firstNumber = 1, negatif = 1;
 	unsigned int num = 0;
+
 	j = 0;
 	while (s[j] && firstNumber)
 	{
