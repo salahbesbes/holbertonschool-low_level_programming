@@ -15,7 +15,7 @@ int _atoi(char *s)
 	int j, num = 0, firstNumber = 1, negatif = 1;
 
 	j = 0;
-	while (s[j])
+	while (s[j] && firstNumber)
 	{
 		if (s[j] == '-' && !num)
 			negatif *= -1;
