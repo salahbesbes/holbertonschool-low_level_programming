@@ -12,13 +12,11 @@
 
 int _atoi(char *s)
 {
-	int j, num = 0, firstNumber = 1, negatif = 1;
+	int j, num = 0, firstNumber = 1, negatif = -1;
 
 	j = 0;
 	while (s[j])
 	{
-		if (s[j] == '-' && !num)
-			negatif *= -1;
 		if (s[j] >= '0' && s[j] <= '9' && firstNumber)
 		{
 			num *= 10;
