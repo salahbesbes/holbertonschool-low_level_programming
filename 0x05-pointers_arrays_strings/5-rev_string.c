@@ -1,4 +1,5 @@
 #include "holberton.h"
+
 /**
  * rev_string - everses a string.
  * @s: string
