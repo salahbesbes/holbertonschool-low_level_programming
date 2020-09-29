@@ -11,5 +11,6 @@
 
 int _atoi(char *s)
 {
+	putchar(*s);
 	return (0);
 }
