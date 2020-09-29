@@ -1,9 +1,5 @@
 
-/**
- * rev_string - everses a string.
- * @s: string
- * return: string
- */
+#include "holberton.h"
 
 void rev_string(char *s)
 {
