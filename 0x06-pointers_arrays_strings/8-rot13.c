@@ -13,8 +13,8 @@ int rotateBy13(int charr)
 {
 	if (charr >= 'A' && charr <= 'Z')
 		charr = (((charr - 'A') + 13) % 26) + 'A';
-	else if (charr >= 'a' && charr <= 'z')
-		charr = (((charr - 'a') + 13) % 26) + 'a';
+	/*else if (charr >= 'a' && charr <= 'z')*/
+	else	charr = (((charr - 'a') + 13) % 26) + 'a';
 	return (charr);
 }
 /**
