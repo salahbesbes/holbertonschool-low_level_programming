@@ -24,6 +24,8 @@ char *cap_string(char *str)
 			{
 				str[i + 1] -= 32;
 			}
+			if (str[0] == specialCaracter[j])
+				str[0] -= 32;
 
 		}
 	}
