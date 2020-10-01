@@ -12,7 +12,7 @@
 char *cap_string(char *str)
 {
 
-	int specialCaracter[13] = {' ', '\t', '\n', ',', ';', '.',
+	int specialCaracter[13] = {' ', '	', '\n', ',', ';', '.',
 		'!', '?', '\"', '(', ')', '{', '}'};
 	int i, j;
 
@@ -26,6 +26,8 @@ char *cap_string(char *str)
 			}
 
 		}
+		if (str[i] == '\t')
+			str[i] = ' ';
 	}
 
 
