@@ -10,7 +10,8 @@ void print_number(int n)
 
 
 	int i = 1;
-	unsigned int num;
+	int num;
+
 	if (n < 0)
 	{
 		_putchar('-');
@@ -29,3 +30,4 @@ void print_number(int n)
 		i /= 10;
 	} while (num);
 }
+
