@@ -9,9 +9,12 @@
  * Return: int
  */
 
-int rotateBy13(int charr, int firstLetter)
+int rotateBy13(int charr)
 {
-	charr = (((charr - firstLetter) + 13) % 26) + firstLetter;
+	if (charr >= 'A' && charr <= 'Z')
+		charr = (((charr - 'A') + 13) % 26) + 'A';
+	else if (charr >= 'a' && charr <= 'z')
+		charr = (((charr - 'a') + 13) % 26) + 'a';
 	return (charr);
 }
 /**
@@ -26,11 +29,8 @@ char *rot13(char *str)
 
 	for (i = 0; str[i]; i++)
 	{
-		if (str[i] >= 'A' && str[i] <= 'Z')
-			str[i] = rotateBy13(str[i], 65);
-		/*	else if (str[i] >= 'a' && str[i] <= 'z')
-			str[i] = rotateBy13(str[i], 97);
-			*/
+		str[i] = rotateBy13(str[i]);
+
 	}
 	return (str);
 }
