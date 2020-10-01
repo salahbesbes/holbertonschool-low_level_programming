@@ -11,7 +11,7 @@
 char *leet(char *str)
 {
 	int leet[10] = {'a', 'A', 'e', 'E', 'o', 'O', 't', 'T', 'l', 'L'};
-	int correction[] = {3, 3, -2, -2, -7, -7, 3, 3, -3, -3};
+	int correction[] = {4, 4, 3, 3, 0, 0, 7, 7, 1, 1};
 	int i, j;
 
 	for (i = 0; str[i]; i++)
@@ -19,7 +19,8 @@ char *leet(char *str)
 		for (j = 0; j < 10; j++)
 			if (str[i] == leet[j])
 			{
-				str[i] = leet[j] % 8  + 48 + correction[j];
+				str[i] = correction[j] + 48;
+				break;
 			}
 	}
 	return (str);
