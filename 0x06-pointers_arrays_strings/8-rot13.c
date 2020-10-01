@@ -28,8 +28,9 @@ char *rot13(char *str)
 	{
 		if (str[i] >= 'A' && str[i] <= 'Z')
 			str[i] = rotateBy13(str[i], 65);
-		else if (str[i] >= 'a' && str[i] <= 'z')
+		/*	else if (str[i] >= 'a' && str[i] <= 'z')
 			str[i] = rotateBy13(str[i], 97);
+			*/
 	}
 	return (str);
 }
