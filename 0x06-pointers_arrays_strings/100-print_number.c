@@ -10,7 +10,7 @@ void print_number(int n)
 
 
 	int i = 1;
-	unsigned int num;
+	int num;
 
 	if (n < 0)
 	{
@@ -28,6 +28,6 @@ void print_number(int n)
 		_putchar(num / i + '0');
 		num %= i;
 		i /= 10;
-	} while (num);
+	} while (i);
 }
 
