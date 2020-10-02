@@ -15,20 +15,19 @@ void print_number(int n)
 	if (n < 0)
 	{
 		_putchar('-');
-		n *= -1;
+		num = -n;
 	}
-
-	num = n;
+	else
+		num = n;
+		n /= 10;
 	do {
 		i *= 10;
 		n /= 10;
 	} while (n);
-	i /= 10;
-
-        do {
+	do {
 		_putchar(num / i + '0');
 		num %= i;
 		i /= 10;
-	} while (i);
+	} while (num);
 }
 
