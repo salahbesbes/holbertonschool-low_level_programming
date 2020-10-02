@@ -10,7 +10,7 @@ void print_number(int n)
 
 
 	int i = 1;
-	int num;
+	unsigned int num;
 
 	if (n < 0)
 	{
@@ -24,10 +24,11 @@ void print_number(int n)
 		n /= 10;
 	} while (n);
 	i /= 10;
-	do {
+
+        do {
 		_putchar(num / i + '0');
 		num %= i;
 		i /= 10;
-	} while (num);
+	} while (i);
 }
 
