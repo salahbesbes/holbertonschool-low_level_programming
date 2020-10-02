@@ -10,24 +10,29 @@ void print_number(int n)
 
 
 	int i = 1;
-	int num;
+	unsigned int num;
 
 	if (n < 0)
 	{
 		_putchar('-');
-		num = -n;
+		n *= -1;
 	}
-	else
-		num = n;
-		n /= 10;
-	do {
+
+	num = n;
+	n /= 10;
+
+	while (n)
+	{
 		i *= 10;
 		n /= 10;
-	} while (n);
+	};
+
 	do {
 		_putchar(num / i + '0');
 		num %= i;
 		i /= 10;
 	} while (i);
+
+
 }
 
