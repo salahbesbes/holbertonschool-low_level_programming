@@ -1,19 +1,21 @@
 #include"holberton.h"
+#include <stdio.h>
 
 /**
  * print_sign - check the code for Holberton School students.
  * @n: blabalbal
- *
+ * @i: dqsd
  * Return: Always 0.
  */
-
+int j;
 
 
 int print_sign(int n)
 {
 	int result;
 
-	if (n < 0)
+	printf("print %d", j);
+	if (n  < 0)
 	{
 		result = -1;
 		_putchar('-');

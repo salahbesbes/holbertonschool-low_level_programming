@@ -3,14 +3,13 @@
 
 int main()
 {
-	char str1[] = "00", str2[] = "abCd", str3[] = "abcd";
-	int result, i;
+	char str1[] = "ab", str2[] = "abCd", str3[] = "abcd";
+	int result;
 
+	// comparing strings str1 and str2
+	result = strcmp(str1, str2);
+	printf("strcmp(str1, str2) = %d\n", result);
 
-	for (i = 0; str2[i]; i++)
-	{
-		printf("[%d]= %d, ", i, str2[i]);
-	}
 
 	return 0;
 }

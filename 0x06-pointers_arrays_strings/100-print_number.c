@@ -1,3 +1,4 @@
+#include "_putchar.c"
 #include "holberton.h"
 /**
  * print_number - check the code for Holberton School students.
@@ -5,9 +6,15 @@
  * Return: Always 0.
  */
 
+
+
 void print_number(int n)
 {
+for (i = 0; i < count; ++i)
+{
 
+
+}
 
 	int i = 1;
 	unsigned int num;

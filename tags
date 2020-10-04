@@ -1,0 +1,119 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+HOLBERTON_H	./0x03-debugging/holberton.h	2;"	d
+_abs	./0x02-functions_nested_loops/6-abs.c	/^int _abs(int n)$/;"	f
+_atoi	./0x05-pointers_arrays_strings/100-atoi.c	/^int _atoi(char *s)$/;"	f
+_isalpha	./0x02-functions_nested_loops/4-isalpha.c	/^int _isalpha(int c)$/;"	f
+_isdigit	./0x04-more_functions_nested_loops/1-isdigit.c	/^int _isdigit(int c)$/;"	f
+_islower	./0x02-functions_nested_loops/3-islower.c	/^int _islower(int c)$/;"	f
+_isupper	./0x04-more_functions_nested_loops/0-isupper.c	/^int _isupper(int c)$/;"	f
+_putchar	./0x02-functions_nested_loops/_putchar.c	/^int _putchar(char c)$/;"	f
+_putchar	./0x04-more_functions_nested_loops/_putchar.c	/^int _putchar(char c)$/;"	f
+_putchar	./0x05-pointers_arrays_strings/_putchar.c	/^int _putchar(char c)$/;"	f
+_putchar	./0x06-pointers_arrays_strings/_putchar.c	/^int _putchar(char c)$/;"	f
+_puts	./0x05-pointers_arrays_strings/3-puts.c	/^void _puts(char *str)$/;"	f
+_strcat	./0x06-pointers_arrays_strings/0-strcat.c	/^char *_strcat(char *dest, char *src)$/;"	f
+_strcmp	./0x06-pointers_arrays_strings/3-strcmp.c	/^int _strcmp(char *s1, char *s2)$/;"	f
+_strcpy	./0x05-pointers_arrays_strings/9-strcpy.c	/^char *_strcpy(char *dest, char *src)$/;"	f
+_strlen	./0x05-pointers_arrays_strings/2-strlen.c	/^int _strlen(char *s)$/;"	f
+_strncat	./0x06-pointers_arrays_strings/1-strncat.c	/^char *_strncat(char *dest, char *src, int n)$/;"	f
+_strncpy	./0x06-pointers_arrays_strings/2-strncpy.c	/^char *_strncpy(char *dest, char *src, int n)$/;"	f
+add	./0x02-functions_nested_loops/10-add.c	/^int add(int a, int b)$/;"	f
+cap_string	./0x06-pointers_arrays_strings/6-cap_string.c	/^char *cap_string(char *str)$/;"	f
+infinite_add	./0x06-pointers_arrays_strings/102-infinite_add.c	/^char *infinite_add(char *n1, char *n2, char *r, int size_r)$/;"	f
+j	./0x02-functions_nested_loops/5-sign.c	/^int j;$/;"	v
+jack_bauer	./0x02-functions_nested_loops/8-24_hours.c	/^void jack_bauer(void)$/;"	f
+largest_number	./0x03-debugging/2-largest_number.c	/^int largest_number(int a, int b, int c)$/;"	f
+leet	./0x06-pointers_arrays_strings/7-leet.c	/^char *leet(char *str)$/;"	f
+main	./0x00-hello_world/101-quote.c	/^int main(void)$/;"	f
+main	./0x00-hello_world/4-puts.c	/^int main(void)$/;"	f
+main	./0x00-hello_world/5-printf.c	/^int main(void)$/;"	f
+main	./0x00-hello_world/6-size.c	/^int main(void)$/;"	f
+main	./0x00-hello_world/main.c	/^int main () {$/;"	f
+main	./0x00-hello_world/main.s	/^main:$/;"	l
+main	./0x01-variables_if_else_while/0-positive_or_negative.c	/^int main(void)$/;"	f
+main	./0x01-variables_if_else_while/1-last_digit.c	/^int main(void)$/;"	f
+main	./0x01-variables_if_else_while/10-print_comb2.c	/^int main(void)$/;"	f
+main	./0x01-variables_if_else_while/100-print_comb3.c	/^int main(void)$/;"	f
+main	./0x01-variables_if_else_while/101-print_comb4.c	/^int main(void)$/;"	f
+main	./0x01-variables_if_else_while/102-print_comb5.c	/^int main(void)$/;"	f
+main	./0x01-variables_if_else_while/2-print_alphabet.c	/^int main(void)$/;"	f
+main	./0x01-variables_if_else_while/3-print_alphabets.c	/^int main(void)$/;"	f
+main	./0x01-variables_if_else_while/4-print_alphabt.c	/^int main(void)$/;"	f
+main	./0x01-variables_if_else_while/5-print_numbers.c	/^int main(void)$/;"	f
+main	./0x01-variables_if_else_while/6-print_numberz.c	/^int main(void)$/;"	f
+main	./0x01-variables_if_else_while/7-print_tebahpla.c	/^int main(void)$/;"	f
+main	./0x01-variables_if_else_while/8-print_base16.c	/^int main(void)$/;"	f
+main	./0x01-variables_if_else_while/9-print_comb.c	/^int main(void)$/;"	f
+main	./0x02-functions_nested_loops/0-holberton.c	/^int main(void)$/;"	f
+main	./0x02-functions_nested_loops/101-natural.c	/^int main(void)$/;"	f
+main	./0x02-functions_nested_loops/102-fibonacci.c	/^int main(void)$/;"	f
+main	./0x02-functions_nested_loops/103-fibonacci.c	/^int main(void)$/;"	f
+main	./0x02-functions_nested_loops/104-fibonacci.c	/^int main(void)$/;"	f
+main	./0x03-debugging/0-main.c	/^int main(void)$/;"	f
+main	./0x03-debugging/1-main.c	/^int main(void)$/;"	f
+main	./0x03-debugging/main.c	/^int main(void)$/;"	f
+main	./0x03-debugging/positive_or_negative.c	/^int main(void)$/;"	f
+main	./0x04-more_functions_nested_loops/0-main.c	/^int main(void)$/;"	f
+main	./0x04-more_functions_nested_loops/10-main.c	/^int main(void)$/;"	f
+main	./0x04-more_functions_nested_loops/100-prime_factor.c	/^int main(void)$/;"	f
+main	./0x04-more_functions_nested_loops/101-main.c	/^int main(void)$/;"	f
+main	./0x04-more_functions_nested_loops/5-main.c	/^int main(void)$/;"	f
+main	./0x04-more_functions_nested_loops/6-main.c	/^int main(void)$/;"	f
+main	./0x04-more_functions_nested_loops/7-main.c	/^int main(void)$/;"	f
+main	./0x04-more_functions_nested_loops/8-main.c	/^int main(void)$/;"	f
+main	./0x04-more_functions_nested_loops/9-fizz_buzz.c	/^int main(void)$/;"	f
+main	./0x05-pointers_arrays_strings/100-main.c	/^int main(void)$/;"	f
+main	./0x05-pointers_arrays_strings/101-keygen.c	/^int main(void)$/;"	f
+main	./0x05-pointers_arrays_strings/5-main.c	/^int main(void)$/;"	f
+main	./0x05-pointers_arrays_strings/6-main.c	/^int main(void)$/;"	f
+main	./0x05-pointers_arrays_strings/7-main.c	/^int main(void)$/;"	f
+main	./0x05-pointers_arrays_strings/9-main.c	/^int main(void)$/;"	f
+main	./0x06-pointers_arrays_strings/0-main.c	/^int main(void)$/;"	f
+main	./0x06-pointers_arrays_strings/1-main.c	/^int main(void)$/;"	f
+main	./0x06-pointers_arrays_strings/100-main.c	/^int main(void)$/;"	f
+main	./0x06-pointers_arrays_strings/101-magic.c	/^int main(void)$/;"	f
+main	./0x06-pointers_arrays_strings/102-main.c	/^int main(void)$/;"	f
+main	./0x06-pointers_arrays_strings/2-main.c	/^int main(void)$/;"	f
+main	./0x06-pointers_arrays_strings/3-main.c	/^int main(void)$/;"	f
+main	./0x06-pointers_arrays_strings/4-main.c	/^int main(void)$/;"	f
+main	./0x06-pointers_arrays_strings/5-main.c	/^int main(void)$/;"	f
+main	./0x06-pointers_arrays_strings/6-main.c	/^int main(void)$/;"	f
+main	./0x06-pointers_arrays_strings/7-main.c	/^int main(void)$/;"	f
+main	./0x06-pointers_arrays_strings/8-main.c	/^int main(void)$/;"	f
+main	./0x06-pointers_arrays_strings/test.c	/^int main()$/;"	f
+main	./test.c	/^int main(void)$/;"	f
+modif_my_char_var	./test.c	/^void modif_my_char_var(char *cc , char ccc)$/;"	f
+more_numbers	./0x04-more_functions_nested_loops/5-more_numbers.c	/^void more_numbers(void)$/;"	f
+mul	./0x04-more_functions_nested_loops/2-mul.c	/^int mul(int a, int b)$/;"	f
+print_alphabet	./0x02-functions_nested_loops/1-alphabet.c	/^void print_alphabet(void)$/;"	f
+print_alphabet_x10	./0x02-functions_nested_loops/2-print_alphabet_x10.c	/^void print_alphabet_x10(void)$/;"	f
+print_array	./0x05-pointers_arrays_strings/8-print_array.c	/^void print_array(int *a, int n)$/;"	f
+print_array	./0x06-pointers_arrays_strings/4-main.c	/^void print_array(int *a, int n)$/;"	f
+print_diagonal	./0x04-more_functions_nested_loops/7-print_diagonal.c	/^void print_diagonal(int n)$/;"	f
+print_last_digit	./0x02-functions_nested_loops/7-print_last_digit.c	/^int print_last_digit(int n)$/;"	f
+print_line	./0x04-more_functions_nested_loops/6-print_line.c	/^void print_line(int n)$/;"	f
+print_most_numbers	./0x04-more_functions_nested_loops/4-print_most_numbers.c	/^void print_most_numbers(void)$/;"	f
+print_number	./0x04-more_functions_nested_loops/101-print_number.c	/^void print_number(int n)$/;"	f
+print_number	./0x06-pointers_arrays_strings/100-print_number.c	/^void print_number(int n)$/;"	f
+print_numbers	./0x04-more_functions_nested_loops/3-print_numbers.c	/^void print_numbers(void)$/;"	f
+print_remaining_days	./0x03-debugging/3-print_remaining_days.c	/^void print_remaining_days(int month, int day, int year)$/;"	f
+print_rev	./0x05-pointers_arrays_strings/4-print_rev.c	/^void print_rev(char *s)$/;"	f
+print_sign	./0x02-functions_nested_loops/5-sign.c	/^int print_sign(int n)$/;"	f
+print_square	./0x04-more_functions_nested_loops/8-print_square.c	/^void print_square(int size)$/;"	f
+print_times_table	./0x02-functions_nested_loops/100-times_table.c	/^void print_times_table(int n)$/;"	f
+print_to_98	./0x02-functions_nested_loops/11-print_to_98.c	/^void print_to_98(int n)$/;"	f
+print_triangle	./0x04-more_functions_nested_loops/10-print_triangle.c	/^void print_triangle(int size)$/;"	f
+puts2	./0x05-pointers_arrays_strings/6-puts2.c	/^void puts2(char *str)$/;"	f
+puts_half	./0x05-pointers_arrays_strings/7-puts_half.c	/^void puts_half(char *str)$/;"	f
+reset_to_98	./0x05-pointers_arrays_strings/0-reset_to_98.c	/^void reset_to_98(int *n)$/;"	f
+rev_string	./0x05-pointers_arrays_strings/5-rev_string.c	/^void rev_string(char *s)$/;"	f
+reverse_array	./0x06-pointers_arrays_strings/4-rev_array.c	/^void reverse_array(int *a, int n)$/;"	f
+rot13	./0x06-pointers_arrays_strings/8-rot13.c	/^char *rot13(char *str)$/;"	f
+string_toupper	./0x06-pointers_arrays_strings/5-string_toupper.c	/^char *string_toupper(char *str)$/;"	f
+swap_int	./0x05-pointers_arrays_strings/1-swap.c	/^void swap_int(int *a, int *b)$/;"	f
+times_table	./0x02-functions_nested_loops/9-times_table.c	/^void times_table(void)$/;"	f

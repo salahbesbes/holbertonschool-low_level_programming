@@ -1,28 +1,15 @@
 #include "holberton.h"
+
 /**
  * main - check the code for Holberton School students.
  *
  * Return: Always 0.
  */
-
 int main(void)
 {
-	char str[] = "Holberton";
-	int i;
+	char *str;
 
-
-
-	for (i = 0; i < 9; i++)
-	{
-
-
-
-
-		_putchar(str[i]);
-	}
-	_putchar('\n');
-
-
+	str = "0123456789";
+	puts2(str);
 	return (0);
 }
-
