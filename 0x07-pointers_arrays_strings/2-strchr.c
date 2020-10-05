@@ -8,9 +8,9 @@
  * Return: pointer to new str
  */
 
-char *NULL;
 char *_strchr(char *s, char c)
 {
+	char *NULL;
 	int i;
 	char *p = s;
 
