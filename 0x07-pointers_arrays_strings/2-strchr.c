@@ -23,8 +23,9 @@ char *_strchr(char *s, char c)
 			break;
 	}
 
-	if (p == s)
-		return (*zero);
 
-	return (p);
+	if (p > s)
+		return (p);
+	else
+		return (zero);
 }
