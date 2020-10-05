@@ -14,20 +14,17 @@ char *_strchr(char *s, char c)
 	unsigned int i;
 	char *p = s;
 
+
+	
+	if (c == '\0')
+		return (s);
+
 	for (i = 0; s[i]; ++i)
 	{
 		if (s[i] != c)
 			p++;
 		else
-			break;
+			return (p);;
 	}
-
-
-
-	if (p == s)
-		return (0);
-	else if (c == '\0')
-		return (s);
-	else
-		return (p);
+	return (0);
 }
