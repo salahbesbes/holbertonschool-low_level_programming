@@ -14,16 +14,15 @@ char *_strstr(char *haystack, char *needle)
 {
 	unsigned int i, j, found = 1, k = 0;
 	char *p = haystack, *a = needle;
-	
 
 	for (i = 0; haystack[i]; ++i)
 	{
 		found = 0;
-		if(haystack[i] == needle[0])
+		if (haystack[i] == needle[0])
 		{
 			for (j = 1; needle[j]; ++j)
 			{
-				if(haystack[i+j] && haystack[i+j] == needle[j])
+				if (haystack[i + j] && haystack[i + j] == needle[j])
 				{
 					found = 1;
 				}
@@ -34,19 +33,18 @@ char *_strstr(char *haystack, char *needle)
 				}
 			}
 		}
-		if(found)
+		if (found)
 		{
 			break;
 		}
 	}
-	if(found)
+	if (found)
 	{
-		return haystack + i;
+		return (haystack + i);
 	}
 	else
 	{
-		return 0;
+		return (0);
 	}
 }
-
 
