@@ -11,7 +11,6 @@
 
 char *_strchr(char *s, char c)
 {
-	char *zero = '\0';
 	unsigned int i;
 	char *p = s;
 
@@ -24,8 +23,11 @@ char *_strchr(char *s, char c)
 	}
 
 
-	if (p > s)
-		return (p);
+
+	if (p == s)
+		return (0);
+	else if (c == '\0')
+		return (s);
 	else
-		return (zero);
+		return (p);
 }
