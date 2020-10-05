@@ -18,24 +18,24 @@ char *_strstr(char *haystack, char *needle)
 
 	for (lenNeedle = 0; needle[lenNeedle]; ++lenNeedle)
 		lastP++;
-if (p != a)
-	for (i = 0; needle[i]; ++i)
-	{
-		for (j = 0; haystack[j]; ++j)
+	if (p != a)
+		for (i = 0; needle[i]; ++i)
 		{
-			if (needle[i] == haystack[j] && !count)
+			for (j = 0; haystack[j]; ++j)
 			{
-				count = j;
-				p += count;
+				if (needle[i] == haystack[j] && !count)
+				{
+					count = j;
+					p += count;
 
-				if (p == a)
-					printf("hhhh");
-				else
-					count == 0;
+					if (p == a)
+						printf("hhhh");
+					else
+						count == 0;
+				}
+
 			}
-
 		}
-	}
 	return (p);
 }
 
