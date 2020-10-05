@@ -12,12 +12,10 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	unsigned int i, j, count = 0, lenNeedle, found = 0;
-	char *p = haystack, *a = needle, *lastP = needle;
+	unsigned int i, j, count = 0;
+	char *p = haystack, *a = needle;
 	char *zero = '\0';
 
-	for (lenNeedle = 0; needle[lenNeedle]; ++lenNeedle)
-		lastP++;
 	if (p != a)
 		for (i = 0; needle[i]; ++i)
 		{
@@ -28,14 +26,15 @@ char *_strstr(char *haystack, char *needle)
 					count = j;
 					p += count;
 
-					if (p == a)
-						printf("hhhh");
-					else
+					if (a != p)
 						count == 0;
 				}
 
 			}
 		}
-	return (p);
+	if (p == a)
+		return (p);
+	else
+		return (zero);
 }
 
