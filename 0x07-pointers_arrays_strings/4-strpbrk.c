@@ -12,7 +12,7 @@
 
 char *_strpbrk(char *s, char *accept)
 {
-
+	char *zero = '\0';
 	unsigned int i, j;
 	int count = 0;
 
@@ -30,6 +30,10 @@ char *_strpbrk(char *s, char *accept)
 			}
 		}
 	}
-	return (s + count);
+
+	if (count)
+		return (s + count);
+	else
+		return (zero);
 }
 
