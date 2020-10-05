@@ -12,7 +12,7 @@
 char *_strchr(char *s, char c)
 {
 	char *zero = '\0';
-	int i;
+	unsigned int i;
 	char *p = s;
 
 	for (i = 0; s[i]; ++i)
@@ -25,5 +25,6 @@ char *_strchr(char *s, char c)
 
 	if (p == s)
 		return (zero);
+
 	return (zero);
 }
