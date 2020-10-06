@@ -15,7 +15,8 @@ char *_strstr(char *haystack, char *needle)
 	unsigned int i, j, found = 0;
 
 	for (i = 0; haystack[i]; ++i)
-	{	
+	{
+		found = 0;
 		if (haystack[0] && haystack[i] == needle[0])
 		{
 			found = 1;
@@ -37,6 +38,6 @@ char *_strstr(char *haystack, char *needle)
 	if (found)
 		return (haystack + i);
 	else
-		return ('\0');
+		return (0);
 }
 
