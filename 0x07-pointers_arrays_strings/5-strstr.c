@@ -17,7 +17,7 @@ char *_strstr(char *haystack, char *needle)
 	for (i = 0; haystack[i]; ++i)
 	{
 		
-		if (haystack[i] == needle[0])
+		if (haystack[0] && haystack[i] == needle[0])
 		{
 			found = 1;
 
@@ -35,7 +35,7 @@ char *_strstr(char *haystack, char *needle)
 		if (found)
 			break;
 	}
-	if (found)
+	if (found || !needle[0])
 		return (haystack + i);
 	else
 		return (0);
