@@ -43,9 +43,8 @@ int squereRoot(int i)
 
 int is_prime_number(int n)
 {
-	int composit = 2, qt, res;
+	int res;
 
-	qt = squereRoot(n);
 	if (n < 2)
 		return (0);
 	else if (n == 2)
