@@ -47,17 +47,13 @@ int is_prime_number(int n)
 
 	if (n < 2)
 		return (0);
-	else if (n == 2)
+	if (n == 2)
 		return (1);
-	else if (n % 2 == 0)
+	if (n % 2 == 0)
 		return (0);
-	else if (n % 5 == 0)
+	if (n % 5 == 0)
 		return (0);
-	else
-	{
-		n--;
-		res = (1 +  is_prime_number(n));
-
-	}
+	n--;
+	res = (1 +  is_prime_number(n));
 	return (res);
 }
