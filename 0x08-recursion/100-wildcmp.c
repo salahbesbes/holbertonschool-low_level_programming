@@ -47,7 +47,7 @@ int findChar(char *str, char s, int i)
 int Compare(char *s1, char *s2)
 {
 
-	int diff, len, len1, res;
+	int diff, len, len1;
 
 	len = theLength(s2);
 	len1 = theLength(s1);
