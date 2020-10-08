@@ -47,15 +47,14 @@ int findChar(char *str, char s, int i)
 int Compare(char *s1, char *s2)
 {
 
-	int diff, len, len1;
+	int diff, len, len1, res;
 
 	len = theLength(s2);
 	len1 = theLength(s1);
 
-	if (len1 > 0 && *s2 == '\0')
-		return (0);
 	if (len == 1 && s2[0] == '*')
 		return (1);
+
 	if (s2[0] == '*' && s2[1] == '*')
 		return (Compare(s1, s2 + 1));
 
@@ -69,6 +68,8 @@ int Compare(char *s1, char *s2)
 	if (s1[0] == s2[0] && s2[1])
 		return (Compare(s1 + 1, s2 + 1));
 	if (s1[0] != s2[0])
+		return (0);
+	if (len1 > len)
 		return (0);
 	return (1);
 }
