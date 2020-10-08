@@ -87,9 +87,5 @@ int Compare(char *s1, char *s2)
  */
 int wildcmp(char *s1, char *s2)
 {
-	int lengthS1, lengthS2, res;
-
-	lengthS1 = theLength(s1);
-	lengthS2 = theLength(s2);
 	return (Compare(s1, s2));
 }
