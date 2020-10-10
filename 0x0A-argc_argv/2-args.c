@@ -1,5 +1,7 @@
 #include <stdio.h>
+
 #define UNUSED(x) (void)(x)
+
 /**
 * main - prints all arguments
 * prints all arguments
