@@ -1,4 +1,5 @@
 #include <stdio.h>
+#define UNUSED(x) (void)(x)
 /**
 * main - prints all arguments
 * prints all arguments
@@ -13,6 +14,7 @@
 
 int main(int argc, char *argv[])
 {
+	UNUSED(argc);
 	int i;
 
 	for (i = 0; argv[i]; ++i)
