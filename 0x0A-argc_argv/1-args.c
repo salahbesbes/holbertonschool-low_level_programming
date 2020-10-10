@@ -1,4 +1,5 @@
 #include <stdio.h>
+#define UNUSED(x) (void)(x)
 
 /**
 * main - prints the number of arguments passed
@@ -12,6 +13,7 @@
 
 int main(int argc, char *argv[])
 {
+	UNUSED(argv);
 	printf("print %d", argc - 1);
 	return (0);
 }
