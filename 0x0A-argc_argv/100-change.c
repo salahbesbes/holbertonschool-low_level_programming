@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (1);
 	}
-	if (amount <= 0)
+	if (amount < 0)
 		printf("0\n");
 	else
 	{
