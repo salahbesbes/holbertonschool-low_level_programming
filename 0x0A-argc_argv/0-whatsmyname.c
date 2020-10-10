@@ -11,28 +11,9 @@
 * Error: 1
 */
 
-int main(int argc, char *argv[])
+int main(__attribute__((unused)) int argc, char *argv[])
 {
-	int i, foundmv = 0;
-	char *mv = "mv";
-	char *newname = "./";
-
-	for (i = 0; argv[0][i]; ++i)
-	{
-		if (argv[0][i] == mv[i])
-			foundmv = 1;
-		else
-			foundmv = 0;
-	}
-
-	if (foundmv)
-	{
-		for (i = 0; argv[2][i]; ++i)
-		{
-			newname[i + 2] = argv[2][i];
-		}
-		printf("%s\n", newname);
-	}
+	printf("print %s\n", argv[0]);
 	return (0);
 }
 
