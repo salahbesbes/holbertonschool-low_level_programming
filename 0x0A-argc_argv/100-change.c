@@ -46,8 +46,8 @@ int CheckMin(int val, int res)
 int main(int argc, char *argv[])
 {
 	int res = 0;
-	unsigned int amount = atoi(argv[1]);
-
+	int amount = atoi(argv[1]);
+/*
 	if (argc != 2)
 	{
 		printf("Error\n");
@@ -57,9 +57,10 @@ int main(int argc, char *argv[])
 		printf("%d\n",0);
 	else
 	{
+*/
 		res = CheckMin(amount, res);
 		printf("%d\n", res);
-	}
+	
 
 	return (0);
 }
