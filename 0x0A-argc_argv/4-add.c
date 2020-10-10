@@ -44,7 +44,6 @@ int main(int argc, char *argv[])
 			for (j = 0; argv[i][j]; ++j)
 			{
 				number = checkInteger(argv[i][j]);
-				printf("num = %d\n", number);
 				if (number == 0)
 				{
 					printf("Error\n");
