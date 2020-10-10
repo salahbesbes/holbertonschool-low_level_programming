@@ -46,7 +46,7 @@ int CheckMin(int val, int res)
 int main(int argc, char *argv[])
 {
 	int res = 0;
-	int amount = atoi(argv[1]);
+	unsigned int amount = atoi(argv[1]);
 
 	if (argc != 2)
 	{
