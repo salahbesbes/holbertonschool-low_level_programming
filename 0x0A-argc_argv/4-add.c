@@ -1,21 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
-/*
- 
+/**
  * checkInteger - check if the char is integer
  * Description: return 1 if its integer 0 if its not
  * @c: char
  *
  * Return: 0 or 1
-
+ */
 
 int checkInteger(char c)
 {
 	int integer = 1;
 
+	if (c < '0' || c > '9')
+		integer = 0;
 	return (integer);
 }
-*/
+
 
 /**
 * main - return a sum of the integer in te string
@@ -41,8 +42,7 @@ int main(int argc, char *argv[])
 		{
 			for (j = 0; argv[i][j]; ++j)
 			{
-				if (argv[i][j] < '0' || argv[i][j] > '9')
-					number = 0;
+				number = checkInteger(argv[i][j]);
 				if (number == 0)
 				{
 					printf("Error\n");
