@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-# define UNSUED(x) (void)(x)
 
 /**
  * CheckMin - prints the minimum number of coins to make change for
@@ -45,24 +44,24 @@ int CheckMin(int val, int res)
 
 int main(int argc, char *argv[])
 {
-	int res = 0;
-	int amount = atoi(argv[1]);
-/*
 	if (argc != 2)
 	{
-		printf("Error\n");
+		printf("Error %d\n", 0);
 		return (1);
 	}
-	if (amount < 0)
-		printf("%d\n",0);
 	else
 	{
-*/
-	
-	UNSUED(argc);
-	res = CheckMin(amount, res);
-		printf("%d\n", res);
-	
+		int amount = atoi(argv[1]);
+		int res = 0;
+
+		if (amount < 0)
+			printf("0\n");
+		else
+		{
+			res = CheckMin(amount, res);
+			printf("%d\n", res);
+		}
+	}
 
 	return (0);
 }
