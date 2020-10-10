@@ -1,10 +1,5 @@
 #include <stdio.h>
-
-#ifdef __GNUC__
-#  define UNUSED(x) UNUSED_ ## x __attribute__((__unused__))
-#else
-#  define UNUSED(x) UNUSED_ ## x
-#endif
+#define UNUSED(x) (void)(x)
 
 
 /**
@@ -17,8 +12,9 @@
 * Error: 1
 */
 
-int main(int UNUSED(argc), char *argv[])
+int main(int argc, char *argv[])
 {
+	UNUSED(argc);
 	printf("%s\n", argv[0]);
 	return (0);
 }
