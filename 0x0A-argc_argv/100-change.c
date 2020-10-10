@@ -58,7 +58,9 @@ int main(int argc, char *argv[])
 	else
 	{
 */
-		res = CheckMin(amount, res);
+	
+	UNSUED(argc);
+	res = CheckMin(amount, res);
 		printf("%d\n", res);
 	
 
