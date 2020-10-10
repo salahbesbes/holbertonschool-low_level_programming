@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 	if (amount < 0)
-		printf("0\n");
+		printf("%d\n",0);
 	else
 	{
 		res = CheckMin(amount, res);
