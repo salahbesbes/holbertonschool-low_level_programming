@@ -5,31 +5,22 @@
 
 
 /**
- * squereRoot - SQRT of int
+ * CheckPrime - SQRT of int
+ * @n: int
  * @i: int
- *
  * Return: int
  */
 
-int squereRoot(int i)
+int CheckPrime(int n, int i)
 {
-	int tmp = 0, res;
-
-	tmp = i;
-	if (i < 0)
-		return (-1);
-
-	if (i == 1)
+	if (n <= 2)
+		return ((n == 2) ? 1 : 0);
+	if (n % i == 0)
+		return (0);
+	if (i * i > n)
 		return (1);
 
-
-	if (i % 2 == 0)
-		res = i / squereRoot((i / tmp + tmp) / 2);
-	else
-		res = i / (squereRoot((i / tmp + tmp) / 2) + 1);
-/*	printf("|res %d, n = %d, tmp = %d,\n",res ,n ,tmp);*/
-	return (res);
-
+	return (CheckPrime(n, i + 1));
 }
 
 
@@ -43,17 +34,11 @@ int squereRoot(int i)
 
 int is_prime_number(int n)
 {
-	int res;
+	int number;
 
-	if (n < 2)
+	if (n <= 1)
 		return (0);
-	if (n == 2)
-		return (1);
-	if (n % 2 == 0)
-		return (0);
-	if (n % 5 == 0)
-		return (0);
-	n--;
-	res = (1 +  is_prime_number(n));
-	return (res);
+
+	number = CheckPrime(n, 2);
+	return (number);
 }
