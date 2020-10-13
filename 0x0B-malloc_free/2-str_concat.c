@@ -11,18 +11,18 @@
 
 char *str_concat(char *s1, char *s2)
 {
+
+	if (!*s1 && s2)
+		return (s2);
+	else if (s1 && !*s2)
+		return (s1);
+	else if (s1 && s2)
+	{
 	int totalLength = 0, lenS1 = 0, lenS2 = 0, i, j;
 	char *p = malloc(totalLength);
-
+	
 	if (!p)
 		return (NULL);
-	if (!s1)
-		return (s2);
-	if (!s2)
-		return (s1);
-	if (s1[0] && s2[0])	
-	{
-	
 	for (lenS1 = 0; s1[lenS1]; lenS1++)
 	;
 
@@ -43,5 +43,6 @@ char *str_concat(char *s1, char *s2)
 	p[totalLength] = '\0';
 	return (p);
 	}
-	return (NULL);
+	else
+		return (NULL);
 }
