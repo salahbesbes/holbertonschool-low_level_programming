@@ -5,7 +5,7 @@
 /**
 * free_grid - frees a 2 dimensional grid
 * @grid: array of pointers
-*
+* @height: int
 * Return: void
 */
 
