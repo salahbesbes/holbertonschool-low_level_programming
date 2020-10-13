@@ -36,7 +36,7 @@ char *ConcatStr(char *p, char *str)
 
 char *argstostr(int ac, char **av)
 {
-	int i, j;
+	int i;
 	char *p = malloc(1000);
 
 	for (i = 0; i < ac; i++)
