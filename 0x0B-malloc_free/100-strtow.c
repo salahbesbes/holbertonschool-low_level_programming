@@ -20,8 +20,6 @@ char **strtow(char *str)
 		free(p);
 		return (NULL);
 	}
-	if (str == NULL || str == "")
-		return (NULL);
 
 	for (i = 0; i < 5; i++)
 	{
