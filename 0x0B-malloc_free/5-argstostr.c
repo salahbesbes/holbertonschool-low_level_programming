@@ -4,10 +4,10 @@
 #include <string.h>
 
 /**
-* X - 
-* @a: 
-* 
-* Return:
+* lengthStr - Culcule the length of the string
+* @str: str
+*
+* Return: integer
 */
 
 int lengthStr(char *str)
@@ -16,7 +16,6 @@ int lengthStr(char *str)
 
 	for (length = 0; str[length]; length++)
 	;
-
 
 	return (length);
 }
@@ -39,12 +38,6 @@ char *ConcatStr(char *p, char *str)
 		p[j] = str[i];
 	}
 	p[j] = '\n';
-	/*
-	for (i = 0; p[i]; i++)
-	{
-		printf("p[%d] = %d\n", i, p[i]);
-	}
-	*/
 	return (p);
 }
 
