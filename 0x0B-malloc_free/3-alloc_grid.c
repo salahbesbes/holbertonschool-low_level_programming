@@ -12,24 +12,23 @@
 
 int **alloc_grid(int width, int height)
 {
-	int **p = malloc(height * sizeof(int *));
 	int i, j;
+	int **p;
 
-	if (p == NULL)
-		return (NULL);
-	/* replaced by :int (*arr)[M] = malloc(sizeof(int[N][M]));*/
-	if (height <= 0  || width <= 0)
+	p = malloc(height * sizeof(*p));
+
+	if (width <= 0 || height <= 0)
 		return (NULL);
 
 	for (i = 0; i < height; i++)
 	{
-		p[i] = (int *)malloc(width * sizeof(int));
-		if (p[i] == NULL)
+		p[i] = malloc(width * sizeof(int));
+		if (!p[i])
 			return (NULL);
 	}
 
 	for (i = 0; i < height; i++)
 		for (j = 0; j < width; j++)
-			*(*(p + i) + j) = 0;
+			p[i][j] = 0;
 	return (p);
 }
