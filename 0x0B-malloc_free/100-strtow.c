@@ -13,7 +13,7 @@
 char **strtow(char *str)
 {
 	int i = 0, j = 0, k = 0;
-	if (str == NULL || *str == '\0')
+	if (str == NULL)
 		return (NULL);
 	char **p = malloc(50 * sizeof(char *));
 
@@ -55,6 +55,8 @@ char **strtow(char *str)
 		i++;
 	}
 	p[i] = NULL;
+
+
 	return (p);
 }
 
