@@ -1,4 +1,5 @@
 
+#include <cstddef>
 #include <stdio.h>
 #include <stdlib.h>
 #include "holberton.h"
@@ -39,6 +40,10 @@ char *argstostr(int ac, char **av)
 	int i;
 	char *p = malloc(1000);
 
+	if (p == NULL)
+		return (NULL);
+	if (ac == 0 && av == NULL)
+		return (NULL);
 	for (i = 0; i < ac; i++)
 	{
 		ConcatStr(p, av[i]);
