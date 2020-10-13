@@ -4,6 +4,23 @@
 #include <string.h>
 
 /**
+* X - 
+* @a: 
+* 
+* Return:
+*/
+
+int lengthStr(char *str)
+{
+	int length;
+
+	for (length = 0; str[length]; length++)
+	;
+
+
+	return (length);
+}
+/**
 * ConcatStr - concat 2 str
 * @p: long string
 * @str: array of string
@@ -22,6 +39,12 @@ char *ConcatStr(char *p, char *str)
 		p[j] = str[i];
 	}
 	p[j] = '\n';
+	/*
+	for (i = 0; p[i]; i++)
+	{
+		printf("p[%d] = %d\n", i, p[i]);
+	}
+	*/
 	return (p);
 }
 
@@ -35,17 +58,19 @@ char *ConcatStr(char *p, char *str)
 
 char *argstostr(int ac, char **av)
 {
-	int i;
-	char *p = malloc(1000);
+	int i, totalLength = 0;
+	char *p;
 
-	if (p == NULL)
-		return (NULL);
 	if (ac == 0 && av == NULL)
 		return (NULL);
+
 	for (i = 0; i < ac; i++)
-	{
+		totalLength += (lengthStr(av[i]) + 1);
+	totalLength++;
+	p = malloc(sizeof(char) * totalLength);
+	p[totalLength] = '\0';
+	for (i = 0; i < ac; i++)
 		ConcatStr(p, av[i]);
-	}
 	return (p);
 }
 
