@@ -40,8 +40,6 @@ char *argstostr(int ac, char **av)
 	int i;
 	char *p = malloc(1000);
 
-	if (p == NULL)
-		return (NULL);
 	if (ac == 0 && av == NULL)
 		return (NULL);
 	for (i = 0; i < ac; i++)
