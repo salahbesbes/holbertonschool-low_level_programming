@@ -11,38 +11,24 @@
 
 char *str_concat(char *s1, char *s2)
 {
-
-	if (!*s1 && s2)
-		return (s2);
-	else if (s1 && !*s2)
-		return (s1);
-	else if (s1 && s2)
-	{
-	int totalLength = 0, lenS1 = 0, lenS2 = 0, i, j;
-	char *p = malloc(totalLength);
+	char *p = malloc(100);
+	int i = 0, j = 0;
 	
-	if (!p)
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+	if (p == NULL)
 		return (NULL);
-	for (lenS1 = 0; s1[lenS1]; lenS1++)
-	;
 
-	for (lenS2 = 0; s2[lenS2]; lenS2++)
-	;
-	totalLength = lenS1 + lenS2;
 
-	for (i = 0, j = -1; i < totalLength; i++)
-	{
-		if (i < lenS1)
-			p[i] = s1[i];
-		if (i >= lenS1)
-		{
-			j++;
-			p[i] = s2[j];
-		}
-	}
-	p[totalLength] = '\0';
+
+	for (i = 0, j = 0; s1[i]; i++, j++)
+		p[j] = s1[i];
+	for (i = 0; s2[i]; i++, j++)
+		p[j] = s2[i];
+	p[j] = '\0';
 	return (p);
-	}
-	else
-		return (NULL);
+	
+	
 }
