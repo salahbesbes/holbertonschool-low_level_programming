@@ -13,6 +13,8 @@
 char **strtow(char *str)
 {
 	int i = 0, j = 0, k = 0;
+	if (str == NULL || *str == '\0')
+		return (NULL);
 	char **p = malloc(50 * sizeof(char *));
 
 	if (!p)
@@ -20,13 +22,12 @@ char **strtow(char *str)
 		free(p);
 		return (NULL);
 	}
-
 	for (i = 0; i < 50; i++)
 	{
 		p[i] = malloc(100 * sizeof(char));
 		if (!p[i])
 			{
-				for(; i >= 0; i--)
+				for( ; i >= 0; i--)
 					free(p[i]);
 				free(p);
 			}
@@ -45,7 +46,6 @@ char **strtow(char *str)
 			p[i][j] = str[k];
 			j++;
 		}
-
 		k++;
 	}
 	if (j > 0)
@@ -55,7 +55,6 @@ char **strtow(char *str)
 		i++;
 	}
 	p[i] = NULL;
-
 	return (p);
 }
 
