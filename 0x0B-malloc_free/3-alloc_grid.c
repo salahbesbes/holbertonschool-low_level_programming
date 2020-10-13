@@ -15,8 +15,10 @@ int **alloc_grid(int width, int height)
 	int **p = malloc(height * sizeof(int *));
 	int i, j;
 
+	if (!p)
+		return (NULL);
 	/* replaced by :int (*arr)[M] = malloc(sizeof(int[N][M]));*/
-	if (height <= 0  && width <= 0)
+	if (height <= 0  || width <= 0)
 		return (NULL);
 
 	for (i = 0; i < height; i++)
