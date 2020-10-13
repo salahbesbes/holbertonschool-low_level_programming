@@ -15,9 +15,23 @@ char **strtow(char *str)
 	int i = 0, j = 0, k = 0;
 	char **p = malloc(5 * sizeof(char *));
 
+	if (!p)
+	{
+		free(p);
+		return (NULL);
+	}
+	if (str == NULL || str == "")
+		return (NULL);
+
 	for (i = 0; i < 5; i++)
 	{
 		p[i] = malloc(10 * sizeof(char));
+		if (!p[i])
+			{
+				for(; i >= 0; i--)
+					free(p[i]);
+				free(p);
+			}
 	}
 	i = 0;
 	while (str[k])
