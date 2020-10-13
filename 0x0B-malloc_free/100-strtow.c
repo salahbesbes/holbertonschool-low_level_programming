@@ -13,8 +13,6 @@
 char **strtow(char *str)
 {
 	int i = 0, j = 0, k = 0;
-	if (str == NULL)
-		return (NULL);
 	char **p = malloc(50 * sizeof(char *));
 
 	if (!p)
