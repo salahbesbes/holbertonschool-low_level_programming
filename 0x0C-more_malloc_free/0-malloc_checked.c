@@ -5,7 +5,7 @@
 /**
 * malloc_checked - allocate memory usinf malloc
 * @b: unsigned int
-* 
+*
 * Return: a pointer  to the memory allocated
 */
 
