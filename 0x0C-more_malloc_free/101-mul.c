@@ -1,20 +1,19 @@
+#include "holberton.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "holberton.h"
-#include <string.h>
 
 
 /**
 * CheckNumber - check if arguments conatin a string
 * @str: *char
-* 
-* Return:
+*
+* Return: 1 or 0
 */
 
 int CheckNumber(char *str)
 {
 	unsigned int i;
-	
+
 	for (i = 0; str[i]; i++)
 	{
 		if (str[i] < '0' && str[i] > '9')
@@ -36,6 +35,7 @@ int _exitErro(void)
 	_putchar('r');
 	_putchar('o');
 	_putchar('r');
+	_putchar('\n');
 	exit(98);
 }
 /**
@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
 	{
 		_exitErro();
 	}
-	
+
 	isNumber = CheckNumber(argv[1]);
 		_exitErro();
 	isNumber = CheckNumber(argv[2]);
