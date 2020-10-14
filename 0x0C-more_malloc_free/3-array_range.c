@@ -17,11 +17,14 @@ int *array_range(int min, int max)
 	int *p;
 	int i;
 
+	if (min > max)
+		exit(EXIT_FAILURE);
+
 	p = malloc(sizeof(int) * (max + 1));
 	if (!p)
 	{
 		free(p);
-		return (NULL);
+		exit(EXIT_FAILURE);
 	}
 	for (i = 0; i <= max; i++, min++)
 	{
