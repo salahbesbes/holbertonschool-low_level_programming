@@ -13,7 +13,7 @@
 * Return: void*
 */
 
-void *replaceMem(void *new, void *p, unsigned int size)
+void *replaceMem(char *new, void *p, unsigned int size)
 {
 	unsigned int i;
 
@@ -24,9 +24,9 @@ void *replaceMem(void *new, void *p, unsigned int size)
 		return (NULL);
 	}
 	for (i = 0; *((char *)p + i); i++)
-		*((char *)new + i) = *((char *)p + i);
+		new[i] = *((char *)p + i);
 	free(p);
-	return ((char *)new);
+	return (new);
 }
 
 
