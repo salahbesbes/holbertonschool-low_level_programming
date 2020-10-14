@@ -3,18 +3,16 @@
 #include "holberton.h"
 
 /**
-* array_range - allocate an array in memory that contain 
+* array_range - allocate an array in memory that contain
 * values from min to max (both included)
 * @min: int
 * @max: int
-* 
+*
 * Return: new pointer to that array
 */
 
 int *array_range(int min, int max)
 {
-	if (min > max)
-		return (NULL);
 
 	int *p;
 	int i;
