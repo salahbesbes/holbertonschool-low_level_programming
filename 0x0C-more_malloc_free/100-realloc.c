@@ -26,7 +26,7 @@ void *replaceMem(void *new, void *p, unsigned int size)
 	for (i = 0; *((char *)p + i); i++)
 		*((char *)new + i) = *((char *)p + i);
 	free(p);
-	return (new);
+	return ((char *)new);
 }
 
 
@@ -41,7 +41,7 @@ void *replaceMem(void *new, void *p, unsigned int size)
 
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	void *new = NULL;
+	char *new = NULL;
 
 	if (ptr == NULL)
 	{
