@@ -22,6 +22,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
+	
+	if (*s2 == '\0' && *s1 == '\0')
+		return (NULL);
+	
 	for (lenS1 = 0; s1[lenS1]; lenS1++)
 	;
 	for (lenS2 = 0; s2[lenS2]; lenS2++)
@@ -44,5 +48,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	for (i = 0; i < n && s2[i]; i++, j++)
 		p[j] = s2[i];
 	p[j] = '\0';
+
+for (i = 0; i < totalLength + 1; i++)
+{
+	printf("p[%d]= %c\n", i, p[i]);
+	
+}
 	return (p);
 }
