@@ -18,13 +18,13 @@ int *array_range(int min, int max)
 	int i;
 
 	if (min > max)
-		exit(EXIT_FAILURE);
+		exit(0);
 
 	p = malloc(sizeof(int) * (max + 1));
 	if (!p)
 	{
 		free(p);
-		exit(EXIT_FAILURE);
+		exit(0);
 	}
 	for (i = 0; i <= max; i++, min++)
 	{
