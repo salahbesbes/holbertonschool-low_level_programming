@@ -7,7 +7,7 @@
 /**
 * replaceMem - allocate new memory and copy the content of the
 * old one
-* @new: pointer to new  location
+* @old_size: old_size of the pointer
 * @p: old pointer to old location
 * @size: size in bytes
 * Return: void*
@@ -16,8 +16,8 @@
 void *replaceMem(void *p, unsigned int size, unsigned int old_size)
 {
 	unsigned int i;
-
 	void *new = malloc(size);
+
 	if (!new)
 	{
 		free(new);
