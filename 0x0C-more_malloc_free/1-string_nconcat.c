@@ -23,19 +23,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (s2 == NULL)
 		s2 = "";
 	
-	if (*s2 == '\0' && *s1 == '\0')
-		return (NULL);
-	
 	for (lenS1 = 0; s1[lenS1]; lenS1++)
 	;
-	for (lenS2 = 0; s2[lenS2]; lenS2++)
-	;
-	if (n >= lenS2)
-		n = lenS2;
 
-	totalLength = lenS1 + lenS2 + 1;
+	totalLength = lenS1 + n + 1;
 
-	p = malloc(sizeof(char) * totalLength);
+	p = malloc(sizeof(char) * totalLength);    
 
 	if (!p)
 	{
@@ -47,12 +40,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	for (i = 0; i < n && s2[i]; i++, j++)
 		p[j] = s2[i];
+
 	p[j] = '\0';
 
-for (i = 0; i < totalLength + 1; i++)
-{
-	printf("p[%d]= %c\n", i, p[i]);
-	
-}
 	return (p);
 }
