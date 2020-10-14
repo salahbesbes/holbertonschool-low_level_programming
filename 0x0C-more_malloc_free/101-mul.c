@@ -56,9 +56,11 @@ int main(int argc, char *argv[])
 	}
 
 	isNumber = CheckNumber(argv[1]);
-		_exitErro();
+		if (!isNumber)
+			_exitErro();
 	isNumber = CheckNumber(argv[2]);
-		_exitErro();
+		if (!isNumber)
+			_exitErro();
 
 	return (0);
 }
