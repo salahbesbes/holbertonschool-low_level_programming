@@ -10,32 +10,22 @@
 * @new: pointer to new  location
 * @p: old pointer to old location
 * @size: size in bytes
-* @oldSize: old_size in bytes
 * Return: void*
 */
 
-void *replaceMem(void *new, void *p, unsigned int size, unsigned int oldSize)
+void *replaceMem(void *new, void *p, unsigned int size)
 {
 	unsigned int i;
 
-	new = malloc(size + 1);
+	new = malloc(size);
 	if (!new)
 	{
 		free(new);
 		return (NULL);
 	}
-	if (size > oldSize)
-	{
-		for (i = 0; *((char *)p + i); i++)
-			*((char *)new + i) = *((char *)p + i);
-		free(p);
-	}
-	else
-	{
-		for (i = 0; i < size; i++)
-			*((char *)new + i) = *((char *)p + i);
-		free(p);
-	}
+	for (i = 0; *((char *)p + i); i++)
+		*((char *)new + i) = *((char *)p + i);
+	free(p);
 	return (new);
 }
 
@@ -70,7 +60,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	}
 	if (old_size != new_size)
 	{
-		new = replaceMem(new, ptr, new_size, old_size);
+		new = replaceMem(new, ptr, new_size);
 	}
 	else
 		return (ptr);
