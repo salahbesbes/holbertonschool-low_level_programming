@@ -51,8 +51,7 @@ void *replaceMem(void *new, void *p, unsigned int size, unsigned int oldSize)
 
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	void *new;
-	unsigned int i;
+	void *new = NULL;
 
 	if (ptr == NULL)
 	{
@@ -72,7 +71,6 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	if (old_size != new_size)
 	{
 		new = replaceMem(new, ptr, new_size, old_size);
-		return (new);
 	}
 	else
 		return (ptr);
