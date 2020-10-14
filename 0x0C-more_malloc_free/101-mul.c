@@ -2,6 +2,42 @@
 #include <stdlib.h>
 #include "holberton.h"
 #include <string.h>
+
+
+/**
+* CheckNumber - check if arguments conatin a string
+* @str: *char
+* 
+* Return:
+*/
+
+int CheckNumber(char *str)
+{
+	unsigned int i;
+	
+	for (i = 0; str[i]; i++)
+	{
+		if (str[i] < '0' && str[i] > '9')
+			return (0);
+
+	}
+
+	return (1);
+}
+/**
+* _exitErro - print Error
+* Return: 98
+*/
+
+int _exitErro(void)
+{
+	_putchar('E');
+	_putchar('r');
+	_putchar('r');
+	_putchar('o');
+	_putchar('r');
+	exit(98);
+}
 /**
 * main - multiply 2 numbers
 * @argc: nb of arguments
@@ -12,16 +48,17 @@
 */
 int main(int argc, char *argv[])
 {
+	int isNumber = 1;
+
 	if (argc != 3)
 	{
-		printf("Error\n");
-		return (1);
+		_exitErro();
 	}
-	int num1 = 0, num2 = 0, mul, i;
+	
+	isNumber = CheckNumber(argv[1]);
+		_exitErro();
+	isNumber = CheckNumber(argv[2]);
+		_exitErro();
 
-	num1 = atoi(argv[1]);
-	num2 = atoi(argv[2]);
-	mul = num1 * num2;
-	printf("%d\n", mul);
-	return (mul);
+	return (0);
 }
