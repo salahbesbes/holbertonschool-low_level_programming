@@ -18,7 +18,7 @@ void *replaceMem(void *new, void *p, unsigned int size, unsigned int oldSize)
 {
 	unsigned int i;
 
-	new = malloc(size);
+	new = malloc(size + 1);
 	if (!new)
 	{
 		free(new);
