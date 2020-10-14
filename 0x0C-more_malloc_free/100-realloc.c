@@ -13,18 +13,18 @@
 * Return: void*
 */
 
-void *replaceMem(char *new, void *p, unsigned int size)
+void *replaceMem(void *p, unsigned int size, unsigned int old_size)
 {
 	unsigned int i;
 
-	new = malloc(size);
+	void *new = malloc(size);
 	if (!new)
 	{
 		free(new);
 		return (NULL);
 	}
-	for (i = 0; *((char *)p + i); i++)
-		new[i] = *((char *)p + i);
+	for (i = 0; i < ((old_size < size) ? old_size : size); i++)
+		*((char *)new + i) = *((char *)p + i);
 	free(p);
 	return (new);
 }
@@ -60,7 +60,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	}
 	if (old_size != new_size)
 	{
-		new = replaceMem(new, ptr, new_size);
+		new = replaceMem(ptr, new_size, old_size);
 	}
 	else
 		return (ptr);
