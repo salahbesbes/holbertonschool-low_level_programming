@@ -25,12 +25,11 @@
 | [2-calloc.c](https://github.com/salahbesbes/holbertonschool-low_level_programming/blob/master/0x0B-malloc_free/3-alloc_grid.c)|
 | [3-array_range.c](https://github.com/salahbesbes/holbertonschool-low_level_programming/blob/master/0x0C-more_malloc_free/3-array_range.c)|
 | [100-realloc.c](https://github.com/salahbesbes/holbertonschool-low_level_programming/blob/master/0x0C-more_malloc_free/100-realloc.c)|
-| [101-mul.c](https://github.com/salahbesbes/holbertonschool-low_level_programming/blob/master/0x0C-more_malloc_free/101-mul.c)| (Work in progress)
+| [101-mul.c](https://github.com/salahbesbes/holbertonschool-low_level_programming/blob/master/0x0C-more_malloc_free/101-mul.c)| 
 
 ## Additional info :construction:
 ### Resources
 
-- GLIBC 2.24
 - gcc 4.8.4
 - betty linter 0.32
 - Valgrind
