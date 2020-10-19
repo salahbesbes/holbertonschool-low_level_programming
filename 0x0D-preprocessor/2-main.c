@@ -1,13 +1,11 @@
 #include <stdio.h>
+
 /**
 * main - print the file name
-* @argc: nb of arguments
-* @argv: arguments
 *
-* Return: 0
-* Error: 1
+* Return: void
 */
-int main(int argc, char *argv[])
+int main(void)
 {
 	printf("%s\n", __FILE__);
 	return (0);
