@@ -12,12 +12,12 @@
 */
 int main(int argc, char *argv[])
 {
-	int i, num1, num2;
+	int num1, num2;
 
-	num2 = atoi(argv[3]);
 	num1 = atoi(argv[1]);
+	num2 = atoi(argv[3]);
 
-	if (argc > 5)
+	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 
 	result = get_op_func(argv[2]);
 
-	if (!result)
+	if (!result || argv[2][1] != '\0')
 	{
 		printf("Error\n");
 		exit(99);
