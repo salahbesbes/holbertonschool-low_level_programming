@@ -1,5 +1,5 @@
 #include "function_pointers.h"
-
+#include <stdlib.h>
 /**
 * int_index - compaire between element of an array using
 * function pointer
@@ -13,7 +13,9 @@
 int int_index(int *array, int size, int (*cmp)(int))
 {
 	int i;
-
+	
+	if (!cmp || !array)
+		exit(0);
 	if (size <= 0)
 		return (-1);
 	for (i = 0; i < size; i++)
