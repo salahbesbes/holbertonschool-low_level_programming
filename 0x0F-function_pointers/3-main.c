@@ -12,16 +12,11 @@
 */
 int main(int argc, char *argv[])
 {
-	int num1, num2;
-
-
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	num2 = atoi(argv[3]);
-	num1 = atoi(argv[1]);
 
 	int (*result)(int, int);
 
@@ -32,7 +27,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(99);
 	}
-	printf("%d\n", result(num1, num2));
+	printf("%d\n", result(atoi(argv[1]), atoi(argv[3])));
 	return (0);
 }
 
