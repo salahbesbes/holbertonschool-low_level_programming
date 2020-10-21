@@ -1,7 +1,7 @@
 #include "function_pointers.h"
 
 /**
-* array_iterator - 
+* array_iterator - print an array using FP
 * @array: array
 * @size: size of array
 * @action: pointer to a function
@@ -12,6 +12,7 @@ void array_iterator(int *array, size_t size, void (*action)(int))
 {
 	unsigned int i;
 
-	for (i = 0; i < size; i++)
-		action(array[i]);
+	if (action)
+		for (i = 0; i < size; i++)
+			action(array[i]);
 }
