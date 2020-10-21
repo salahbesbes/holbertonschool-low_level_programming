@@ -1,5 +1,5 @@
-#ifndef GARD
-#define GARD
+#ifndef GARD_H
+#define GARD_H
 
 /**
  * struct op - Struct op

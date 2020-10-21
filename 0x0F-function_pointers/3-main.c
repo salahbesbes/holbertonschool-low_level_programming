@@ -12,13 +12,13 @@
 */
 int main(int argc, char *argv[])
 {
+	int (*result)(int, int);
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
 
-	int (*result)(int, int);
 
 	result = get_op_func(argv[2]);
 
