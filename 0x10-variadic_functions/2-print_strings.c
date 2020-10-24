@@ -3,10 +3,10 @@
 #include "variadic_functions.h"
 
 /**
-* X - 
-* @a: 
-*
-* Return:
+* print_strings - print all str args
+* @separator: str to separate between args
+* @n: nb of args
+* Return: void
 */
 
 void print_strings(const char *separator, const unsigned int n, ...)
@@ -21,7 +21,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		p = va_arg(vaList, char*);
 		if (p)
 			printf("%s", p);
-		else 
+		else
 			printf("(nil)");
 
 
