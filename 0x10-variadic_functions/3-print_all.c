@@ -39,12 +39,11 @@ void switchCASE(va_list vaList, int j, const char *const format)
 			case 's':
 				{
 					str = va_arg(vaList, char*);
-					if (str)
+					if (str == NULL)
 					{
-						printf("%s%s", separator, str);
-						break;
+						str = "(nil)";
 					}
-					printf("%s(nil)", separator);
+					printf("%s%s", separator, str);
 					break;
 				}
 			default:
