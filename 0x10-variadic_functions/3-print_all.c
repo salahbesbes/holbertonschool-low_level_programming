@@ -11,7 +11,7 @@
 * Return: void
 */
 
-void switchCASE(va_list vaList, int j, const char *format)
+void switchCASE(va_list vaList, int j, const char *const format)
 {
 	char *separator = ", ", *str;
 
@@ -31,7 +31,7 @@ void switchCASE(va_list vaList, int j, const char *format)
 				}
 			case 'f':
 				{
-					printf("%s%.2f ", separator, va_arg(vaList, double));
+					printf("%s%f ", separator, va_arg(vaList, double));
 					break;
 				}
 			case 's':
@@ -65,11 +65,11 @@ void print_all(const char *const format, ...)
 
 	va_start(vaList, format);
 	j = 0;
-	while (format[j])
+	while (format && format[j])
 	{
 		switchCASE(vaList, j, format);
 	j++;
 	}
-	printf("\n");
 	va_end(vaList);
+	printf("\n");
 }
