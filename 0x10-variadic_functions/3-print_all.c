@@ -13,11 +13,11 @@
 
 void switchCASE(va_list vaList, int j, const char *const format)
 {
-	char *separator = "", *str;
+	char *separator = ", ", *str;
 
-	if (j != 0)
+	if (j == 0)
 	{
-		separator = ", ";
+		separator = "";
 	}
 	switch (format[j])
 		{
@@ -41,7 +41,8 @@ void switchCASE(va_list vaList, int j, const char *const format)
 					str = va_arg(vaList, char*);
 					if (str == NULL)
 					{
-						str = "(nil)";
+						printf("%s(nil)", separator);
+						break;
 					}
 					printf("%s%s", separator, str);
 					break;
@@ -62,7 +63,7 @@ void switchCASE(va_list vaList, int j, const char *const format)
 void print_all(const char *const format, ...)
 {
 	va_list vaList;
-	int j;
+	unsigned int j;
 
 	va_start(vaList, format);
 	j = 0;
