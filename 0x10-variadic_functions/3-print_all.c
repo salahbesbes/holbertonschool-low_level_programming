@@ -15,8 +15,6 @@ void switchCASE(va_list vaList, int j, const char *const format)
 {
 	char *separator = ", ", *str;
 
-	if (j == 0)
-		separator = "";
 	switch (format[j])
 		{
 			case 'c':
