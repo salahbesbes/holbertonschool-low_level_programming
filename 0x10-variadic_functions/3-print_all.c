@@ -13,8 +13,12 @@
 
 void switchCASE(va_list vaList, int j, const char *const format)
 {
-	char *separator = ", ", *str;
+	char *separator = "", *str;
 
+	if (j != 0)
+	{
+		separator = ", ";
+	}
 	switch (format[j])
 		{
 			case 'c':
@@ -29,7 +33,7 @@ void switchCASE(va_list vaList, int j, const char *const format)
 				}
 			case 'f':
 				{
-					printf("%s%f ", separator, va_arg(vaList, double));
+					printf("%s%f", separator, va_arg(vaList, double));
 					break;
 				}
 			case 's':
