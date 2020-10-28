@@ -65,15 +65,17 @@ list_t *add_node_end(list_t **head, const char *str)
 	if (*head == NULL)
 	{
 		*head = newNode;
-		return (*head);
+		return (newNode);
 		/* we return generaly the first node (head)*/
 	}
 
 	/* we move the pointer last until the last node */
+	
 	while (last->next)
 		last = last->next;
+
 	/* we add apointer that point to the newNode*/
 	last->next = newNode;
 
-	return (*head);
+	return (newNode);
 }
