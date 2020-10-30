@@ -1,4 +1,3 @@
-#include <cstddef>
 #include <stdio.h>
 #include <stdlib.h>
 #include "lists.h"
@@ -17,12 +16,12 @@ size_t print_list(const list_t *h)
 
 
 	current = h;
-	while (current->next)
+	while (current)
 	{
 		if (current->str == NULL)
 			printf("[0] (nil)\n");
 		else
-			printf("[%d]%s\n", current->len, current->str);
+			printf("[%d] %s\n", current->len, current->str);
 		current = current->next;
 		count++;
 	}
