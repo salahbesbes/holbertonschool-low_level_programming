@@ -8,7 +8,7 @@ global main
 
 main:
 	mov esi, arg1
-	mov rdi, fmt
+	mov edi, fmt
 	mov eax, 0
 	call printf
 
