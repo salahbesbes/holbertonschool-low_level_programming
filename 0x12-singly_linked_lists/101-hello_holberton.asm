@@ -2,16 +2,16 @@
 ; created by salah besbes
 
 section .data:
-	fmt     db "%s", 10, 0
 	arg1	db "Hello, Holberton", 0
+	fmt     db "%s", 10, 0
 
 section .text
-	extern printf
-	global main
+extern printf
+global main
 
 	main:
 		mov esi, arg1
-		mov edi, fmt
+		mov rdi, fmt
 		mov eax, 0
 		call printf
 
