@@ -1,11 +1,9 @@
-; this is a comment 
-; created by salah besbes
 
-section .data:
+SECTION .data:
 	arg1	db "Hello, Holberton", 0
 	fmt     db "%s", 0xA, 0
 
-section .text
+SECTION .text
 extern printf
 global main
 
@@ -20,5 +18,3 @@ global main
 		mov eax, 1
 
 		int 0x80
-
-    
