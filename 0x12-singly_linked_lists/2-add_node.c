@@ -60,7 +60,7 @@ list_t *add_node(list_t **head, const char *str)
 	current->str = strdup(str);
 	if (!current->str)
 	{
-		free(current->str);
+		free(current);
 		return (NULL);
 	}
 	current->next = *head;
