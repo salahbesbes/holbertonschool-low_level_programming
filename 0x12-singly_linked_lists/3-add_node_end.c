@@ -54,13 +54,22 @@ list_t *add_node_end(list_t **head, const char *str)
 	list_t *newNode = NULL;
 	list_t *last = *head;
 
+	if (!str)
+		return (NULL);
 	newNode = malloc(sizeof(list_t));
 	if (!newNode)
+	{
+		free(newNode);
 		return (NULL);
+	}
 	newNode->next = NULL;
-	newNode->len = _strlen(str);
 	newNode->str = strdup(str);
-
+	if (!newNode->str)
+		{
+			free(newNode->str);
+			return (NULL);
+		}
+	newNode->len = _strlen(newNode->str);
 	/* if the list is empty*/
 	if (*head == NULL)
 	{
