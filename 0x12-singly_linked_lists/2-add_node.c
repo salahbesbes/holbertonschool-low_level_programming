@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "lists.h"
+#include <string.h>
 
 /**
 * _strlen - get the length of a strig
@@ -48,13 +49,18 @@ char *allocStr(const char *str)
 list_t *add_node(list_t **head, const char *str)
 {
 
+
 	list_t *current = NULL;
 	int len = _strlen(str);
 
+	if (!str)
+		return (NULL);
 	current = malloc(sizeof(list_t));
 	if (!current)
 		return (NULL);
-	current->str = allocStr(str);
+	current->str = strdup(str);
+	if (!current->str)
+		return (NULL);
 	current->next = *head;
 	current->len = len;
 	*head = current;
