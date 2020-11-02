@@ -1,19 +1,18 @@
 extern printf
 SECTION .data
 	arg1 db "Hello, Holberton", 0
-	fmt  db "%s", 0xA, 0
+	fmt  db "%s", 10, 0
 
 SECTION .text
 	global main
 
 main:
-	mov esi, arg1
-	mov edi, fmt
-	mov eax, 0
+	push rbp
+	mov rdi,fmt
+	mov rsi,arg1
+	mov rax,0
 	call printf
 
-
-	mov ebx, 0
-	mov eax, 1
-	int 0x80
-
+	pop rbp
+	mov rax,0
+	ret
