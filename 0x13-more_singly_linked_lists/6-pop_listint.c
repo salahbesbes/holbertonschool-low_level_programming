@@ -15,6 +15,10 @@ int pop_listint(listint_t **head)
 	listint_t *temp = *head;
 	int count = 0;
 
+	
+	if (!head)
+		return (0);
+
 	*head = temp->next;
 	count = temp->n;
 	free(temp);
