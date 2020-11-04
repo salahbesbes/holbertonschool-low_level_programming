@@ -11,7 +11,7 @@
 
 size_t print_listint_safe(const listint_t *head)
 {
-	listint_t *current, *lastNode, *nextNode;
+	listint_t *current;
 	int i, n, found = 0;
 	listint_t *array[50];
 
@@ -31,10 +31,10 @@ size_t print_listint_safe(const listint_t *head)
 		}
 		if (found)
 		{
-			printf("-> [%p] %d\n", current, current->n);
+			printf("-> [%p] %d\n", (void *)current, current->n);
 			exit(98);
 		}
-		printf("[%p] %d\n", current, current->n);
+		printf("[%p] %d\n", (void *)current, current->n);
 		array[n] = current;
 		n++;
 		current = current->next;
