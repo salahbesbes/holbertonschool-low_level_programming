@@ -17,12 +17,11 @@ size_t print_listint_safe(const listint_t *head)
 	size_t i, n = 0;
 
 	if (!head)
-		return (0);;
+		return (0);
 	current = head;
 	n = 0;
 	while (current)
 	{
-		
 		for (i = 0; i < n; i++)
 		{
 			if (array[i] == current)
