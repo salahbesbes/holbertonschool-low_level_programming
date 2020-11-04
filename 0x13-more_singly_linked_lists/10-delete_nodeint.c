@@ -28,9 +28,11 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		prev = current; /* next node is in (current->next)*/
 		current = current->next;
 	}
+	if (!current)
+		return (-1);
 	/* if index == 0  there is no prev*/
 	if (!prev)
-		*head = current->next;
+		*head = (*head)->next;
 	else /*every other case */
 		prev->next = current->next;
 	/* prev node get liked to the node->next->next to her*/
