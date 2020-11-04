@@ -20,13 +20,13 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 
 
 	if (!*head)
-		return (0);
+		return (-1);
 	current = *head;
 	/* we stop at the index of node to be deleted */
 	for (i = 0; current && i < index; i++)
 	{
 		prev = current; /* next node is in (current->next)*/
-		current = current->next; 
+		current = current->next;
 	}
 	/* if index == 0  there is no prev*/
 	if (!prev)
