@@ -33,9 +33,7 @@ size_t print_listint_safe(const listint_t *head)
 		}
 		if (found)
 		{
-			printf("-> [%p] %d\n", (void *)current, current->n);
-			return (98);
-
+			return (printf("-> [%p] %d\n", (void *)current, current->n), n);
 		}
 		array[n] = current;
 		printf("[%p] %d\n", (void *)current, current->n);
