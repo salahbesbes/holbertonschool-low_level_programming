@@ -11,32 +11,18 @@
 
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *current, *ptr;
-/*
+	const listint_t *current;
 	int found = 0;
 	const listint_t *array[50];
-	*/
 	size_t i, n = 0;
 
 	if (!head)
 		return (0);;
-	current = ptr = head;
+	current = head;
 	n = 0;
 	while (current)
 	{
-		i = 0;
-		while (i < n)
-		{
-			if (ptr == current)
-			{
-				printf("-> [%p] %d\n", (void *)current, current->n);
-				return (n);
-			}
-			ptr = ptr->next;
-			i++;
-		}
 		
-			/*
 		for (i = 0; i < n; i++)
 		{
 			if (array[i] == current)
@@ -51,7 +37,6 @@ size_t print_listint_safe(const listint_t *head)
 			return (n);
 		}
 		array[n] = current;
-		*/
 		printf("[%p] %d\n", (void *)current, current->n);
 		current = current->next;
 		n++;
