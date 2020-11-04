@@ -1,5 +1,4 @@
 #include "lists.h"
-#include <stdlib.h>
 
 
 
@@ -24,25 +23,14 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	if (!newNode)
 		return (NULL);
 	newNode->n = n;
-	if (idx == 0)
-	{
-	//	newNode->next = *head;
-	//	*head = newNode;
-	}
-	else 
-	{
-		current = *head;
-		for (i = 0; current && i < idx - 1; i++)
-		{
-			current = current->next;
-		}
+	current = *head;
+	for (i = 0; current && i < idx - 1; i++)
+		current = current->next;
+	if (!current)
+		return (NULL);
+	newNode->next = current->next;
+	current->next = newNode;
 	
-		if (!current)
-			return (NULL);
 
-		newNode->next = current->next;
-		current->next = newNode;
-		
-	}
 	return (newNode);
 }
