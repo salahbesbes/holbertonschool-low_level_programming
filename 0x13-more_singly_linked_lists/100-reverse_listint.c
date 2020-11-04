@@ -1,10 +1,10 @@
 #include "lists.h"
 
 /**
-* X - 
-* @a: 
+* reverse_listint - reverse a linked list
+* @head: header pointer
 *
-* Return:
+* Return: header
 */
 
 listint_t *reverse_listint(listint_t **head)
@@ -12,7 +12,7 @@ listint_t *reverse_listint(listint_t **head)
 	listint_t  *tail= NULL, *next;
 
 
-	
+
 	while (*head)
 	{
 		next = (*head)->next;
