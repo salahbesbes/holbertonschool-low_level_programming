@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <cstddef>
 #include <stdlib.h>
 
 
@@ -12,8 +13,9 @@
 size_t print_listint_safe(const listint_t *head)
 {
 	listint_t *current;
-	int i, n, found = 0;
+	int i, found = 0;
 	listint_t *array[50];
+	size_t n = 0;
 
 	if (!head)
 		return (0);
@@ -40,5 +42,5 @@ size_t print_listint_safe(const listint_t *head)
 		current = current->next;
 	}
 
-	return (0);
+	return (n);
 }
