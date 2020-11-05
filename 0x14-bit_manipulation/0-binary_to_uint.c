@@ -30,7 +30,7 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int  j, num = 0;
 	int i, len, ele;
 
-	if (b)
+	if (!b)
 		return (0);
 	len = _strlen(b);
 	i = 0;
