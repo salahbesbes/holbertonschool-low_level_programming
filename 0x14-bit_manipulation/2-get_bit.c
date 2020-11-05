@@ -40,8 +40,6 @@ int get_bit(unsigned long n, unsigned int index)
 	n >>= 1;
 	} while (n != 0);
 	len = _strlen(ptr);
-	if (len - 1 - index < 0)
-		return (-1);
 	if (index > len - 1)
 		return (-1);
 	return (ptr[len - 1 - index] - '0');
