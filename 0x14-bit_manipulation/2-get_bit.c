@@ -1,19 +1,5 @@
 #include "holberton.h"
-/**
-* _strlen - str length
-* @str:  char*
-*
-* Return: length
-*/
 
-int _strlen(const char *str)
-{
-	int i;
-
-	for (i = 0; str[i]; i++)
-	;
-	return (i);
-}
 /**
 * get_bit - get the value of the bit
 * @n: unsigned long
@@ -25,22 +11,11 @@ int _strlen(const char *str)
 
 int get_bit(unsigned long n, unsigned int index)
 {
-	char array[255];
-	unsigned long div, mod;
-	unsigned int len;
-	char *ptr = NULL;
+	unsigned long nb;
 
-	ptr = &array[254];
-	*ptr = '\0';
-
-	do {
-	div = n >> 1;
-	mod = n - (div << 1);
-	*--ptr = mod + '0';
-	n >>= 1;
-	} while (n != 0);
-	len = _strlen(ptr);
-	if (index > len - 1)
+	if (index >= sizeof(unsigned long int) * 8)
 		return (-1);
-	return (ptr[len - 1 - index] - '0');
+
+	nb = n >> index;
+	return (nb & 1);
 }
