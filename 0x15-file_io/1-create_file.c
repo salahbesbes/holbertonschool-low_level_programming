@@ -20,8 +20,6 @@ int create_file(const char *filename, char *text_content)
 	int fileNumber = 0;
 	int charWriten = 0;
 
-	for (len = 0; text_content[len]; len++)
-	;
 
 	if (!filename)
 		return (-1);
@@ -30,7 +28,12 @@ int create_file(const char *filename, char *text_content)
 	if (fileNumber < 0 || fileNumber == EACCES)
 		return (-1);
 	if (!text_content)
+	{
+		close(fileNumber);
 		return (1);
+	}
+	for (len = 0; text_content[len]; len++)
+	;
 	charWriten = write(fileNumber, text_content, len);
 	close(fileNumber);
 	if (charWriten != len)
