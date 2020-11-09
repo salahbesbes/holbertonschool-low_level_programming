@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdlib.h>
 
 
 
@@ -16,7 +17,12 @@ int main(int argc, char *argv[])
 	int checkExit = 0;
 	char buf[1024];
 
-	if (argc != 3 || !argv[1] || !argv[2] || argv[1][0] == '\0' || argv[2][0] == '\0')
+	if (argc != 3)
+	{
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		exit(97);
+	}
+	if (!argv[1] || !argv[2])
 		exit(97);
 
 
