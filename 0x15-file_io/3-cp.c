@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
 
 	cpTo = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (cpTo < 0)
-		_exitt(99, argv[1], 0);
+		_exitt(99, argv[2], 0);
 	while ((readChar = read(cpFrom, buf, 1024)) > 0)
 	{
 		if (readChar < 0)
