@@ -32,7 +32,6 @@ int main(int argc, char *argv[])
 	}
 	while ((readChar = read(cpFrom, buf, 1024)) > 0)
 	{
-	printf(" readChar = %d\n", readChar);
 	buf[readChar] = '\0';
 
 	if (readChar < 0)
@@ -44,14 +43,14 @@ int main(int argc, char *argv[])
 	cpTo = open(argv[3], O_WRONLY | O_CREAT | O_APPEND, 0700);
 	if (cpTo < 0)
 	{
-		dprintf(STDERR_FILENO, "create Error: Can't write to %s %d\n", argv[3], cpTo);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[3]);
 		exit(99);
 	}
 
 	writenChar = write(cpTo, buf, readChar);
 	if (writenChar != readChar)
 	{
-		dprintf(STDERR_FILENO, "write Error: Can't write to %s\n", argv[3]);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[3]);
 		exit(99);
 	}
 
