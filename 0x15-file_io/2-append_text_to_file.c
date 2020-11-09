@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <asm-generic/errno-base.h>
+#include <errno.h>
 #include <fcntl.h>
 #include <unistd.h>
 
@@ -26,12 +27,12 @@ int append_text_to_file(const char *filename, char *text_content)
 		return (-1);
 
 	fileNumber = open(filename, O_WRONLY | O_APPEND);
-	if (fileNumber < 0)
+	if (fileNumber < 0 || errno == EACCES)
 		return (-1);
-	if (!text_content || fileNumber == EACCES)
+	if (!text_content)
 		close(fileNumber);
 	charWriten = write(fileNumber, text_content, len);
-	close(fileNumber);
+	close(fileNumber || errno == EACCES);
 	if (charWriten != len)
 		return (-1);
 
