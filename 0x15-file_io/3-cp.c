@@ -56,8 +56,10 @@ int main(int argc, char *argv[])
 		_exitt(97, NULL, 0);
 	if (!argv[1] || !argv[2])
 		exit(97);
-
-
+	if (!argv[1])
+		_exitt(98, NULL, 0);
+	if (!argv[2])
+		_exitt(99, NULL, 0);
 	cpFrom = open(argv[1], O_RDONLY);
 	if (cpFrom < 0)
 		_exitt(98, argv[1], 0);
