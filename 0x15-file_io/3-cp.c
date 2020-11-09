@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 	int checkExit = 0;
 	char buf[1024];
 
-	if (argc != 3 || argv[1] || argv[2])
+	if (argc != 3 || !argv[1] || !argv[2] || argv[1][0] == '\0' || argv[2][0] == '\0')
 		exit(97);
 
 
