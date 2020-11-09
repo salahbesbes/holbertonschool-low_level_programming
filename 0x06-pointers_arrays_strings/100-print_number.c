@@ -10,12 +10,6 @@
 
 void print_number(int n)
 {
-for (i = 0; i < count; ++i)
-{
-
-
-}
-
 	int i = 1;
 	unsigned int num;
 

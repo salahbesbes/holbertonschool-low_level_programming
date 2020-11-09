@@ -23,7 +23,11 @@ listint_t *find_listint_loop(listint_t *head)
 	{
 		if (!faster || !faster->next)
 			return (NULL);
+<<<<<<< HEAD
 		else if (faster == slower || faster->next == slower)
+=======
+		else if (faster->next == slower || faster == slower)
+>>>>>>> c2c734b... fix any diff
 			return (slower);
 		slower = slower->next;
 		faster = faster->next->next;

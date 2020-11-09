@@ -60,7 +60,22 @@ char *addition(char *str1, char *str2)
 			reste = sum / 10;
 		else 
 			reste = 0;
+<<<<<<< HEAD
 		add[i] = sum % 10 + '0';
+=======
+
+
+		add[i] = sum % 10 + '0';
+/*
+		newAdd = malloc(largest + 2);
+		if (newAdd == NULL)
+			return (NULL);
+
+		newAdd[0] = (reste / 10) + '0';
+		for (i = 1; i < largest + 2; i++)
+			newAdd[i] = add[i];
+*/
+>>>>>>> c2c734b... fix any diff
 	}
 	add[largest] = '\0';
 	free(str_small);

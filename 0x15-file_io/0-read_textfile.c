@@ -14,31 +14,25 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t nbCharLu = 0;
-	size_t printedChar = 0;
-	FILE *file = NULL;
-	int caractereLu;
+	ssize_t nbCharLu = 0, printedChar = 0;
+	int fileNumber, i;
+	char content[10000];
 
 	if (!filename)
 		return (0);
 
-	file = fopen(filename, "r");
-	if (!file)
-	{
+	fileNumber = open(filename, O_RDONLY, 600);
+	if (fileNumber == -1)
 		return (0);
-	}
-	do {
-		caractereLu = fgetc(file);
-		if (caractereLu < 0)
-			return (nbCharLu);
-		if (caractereLu > 0)
-		{
-			printedChar = write(STDOUT_FILENO, &caractereLu, 1);
-			if (printedChar != 1)
-				return (0);
-			nbCharLu++;
-		}
-	} while (nbCharLu < (ssize_t)letters);
-	fclose(file);
-	return (nbCharLu);
+
+	nbCharLu = read(fileNumber, content, letters);
+	close(fileNumber);
+
+	content[letters] = '\0';
+	for (i = 0; content[i]; i++)
+	;
+	printedChar = write(STDOUT_FILENO, content, i);
+	if (printedChar != nbCharLu)
+		return (0);
+	return (printedChar);
 }

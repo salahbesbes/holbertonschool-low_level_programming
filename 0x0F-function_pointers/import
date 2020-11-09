@@ -1,0 +1,8 @@
+
+#!\bin\bash
+
+sed  's/hello:/& ***********************************/' ./Makefile 
+#gcc -g -ggdb -c tst.c
+#objdump -S tst.o
+
+

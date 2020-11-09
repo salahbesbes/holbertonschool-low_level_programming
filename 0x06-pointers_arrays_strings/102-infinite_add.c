@@ -21,7 +21,8 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r) {
     ;
   j = lenN2 - 1;
   int k = size_r - 1;
-  for (i = lenN1 - 1; i >= 0; i--, j--, k--) {
+  for (i = lenN1 - 1; i >= 0; i--, j--, k--)
+  {
     if (j >= 0)
       sum = n1[i] + n2[j] + reste - 96;
     else

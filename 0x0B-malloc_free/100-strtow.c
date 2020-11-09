@@ -3,6 +3,26 @@
 #include "holberton.h"
 
 /**
+<<<<<<< HEAD
+=======
+* howManyWords - determine how many words in the string
+* @str: str
+* 
+* Return: integer
+*/
+
+int howManyWords(char *str)
+{
+	unsigned int pos = 0 , i;
+	int len = 0;
+
+	for (len = 0; *(str + pos) && *(str + pos) != ' ' ; len++)
+	;
+
+	return (len);
+}
+/**
+>>>>>>> c2c734b... fix any diff
 * strtow - transform a long string into words and save them into array of
 * string
 * @str: string
@@ -13,7 +33,16 @@
 char **strtow(char *str)
 {
 	int i = 0, j = 0, k = 0;
+<<<<<<< HEAD
 	char **p = malloc(50 * sizeof(char *));
+=======
+	char **p ;
+	unsigned int words;
+
+
+	words = howManyWords(str);
+	p = malloc(100 * sizeof(char *));
+>>>>>>> c2c734b... fix any diff
 
 	if (!p)
 	{

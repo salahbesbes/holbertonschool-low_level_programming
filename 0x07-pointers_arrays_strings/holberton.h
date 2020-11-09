@@ -8,4 +8,7 @@ void print_chessboard(char (*a)[8]);
 void print_diagsums(int *a, int size);
 void set_string(char **s, char *to);
 int _putchar(char c);
+int _manySting(char *s, char *w, int *pos, int *lenPos);
+int *_graterThan(int *a, int *lengthA);
+
 
