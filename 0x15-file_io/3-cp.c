@@ -30,31 +30,32 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	while ((readChar = read(cpFrom, buf, 1024)) > 0)
-	{
-	buf[readChar] = '\0';
-
-	if (readChar < 0)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
-	}
-
-	cpTo = open(argv[2], O_WRONLY | O_CREAT | O_APPEND, 0664);
+	
+	cpTo = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (cpTo < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-
-	writenChar = write(cpTo, buf, readChar);
-	if (writenChar != readChar)
+	while ((readChar = read(cpFrom, buf, 1024)) > 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		exit(99);
-	}
+
+		if (readChar < 0)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+			exit(98);
+		}
+
+
+		writenChar = write(cpTo, buf, readChar);
+		if (writenChar != readChar)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			exit(99);
+		}
 
 	}
+
 	checkExit = close(cpTo);
 	if (checkExit < 0)
 	{
