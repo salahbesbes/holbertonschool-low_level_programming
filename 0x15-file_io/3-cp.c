@@ -1,9 +1,4 @@
 #include "holberton.h"
-#include <errno.h>
-#include <fcntl.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
 
 
 
@@ -21,8 +16,9 @@ int main(int argc, char *argv[])
 	int checkExit = 0;
 	char buf[1024];
 
-	if (argc != 3)
+	if (argc != 3 || argv[1] || argv[2])
 		exit(97);
+
 
 	cpFrom = open(argv[1], O_RDONLY);
 	if (cpFrom < 0)
@@ -70,5 +66,5 @@ int main(int argc, char *argv[])
 		exit(100);
 	}
 
-	return (1);
+	return (0);
 }
