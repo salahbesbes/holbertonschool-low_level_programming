@@ -55,12 +55,12 @@ int main(int argc, char *argv[])
 	if (argc != 3)
 		_exitt(97, NULL, 0);
 	if (!argv[1] || !argv[2])
-		_exitt(97, NULL, 0);
+		exit(97);
 
 
 	cpFrom = open(argv[1], O_RDONLY);
 	if (cpFrom < 0)
-		_exitt(98, argv[2], 0);
+		_exitt(98, argv[1], 0);
 
 	cpTo = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (cpTo < 0)
