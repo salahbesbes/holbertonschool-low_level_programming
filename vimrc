@@ -1,14 +1,14 @@
 source ~/.vim/vundles.vim
 
 " encoding dectection
-set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
-
+"set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
+set encoding=utf-8
 " enable filetype dectection and ft specific plugin/indent
 filetype plugin indent on
 
 " enable syntax hightlight and completion
 syntax on
-
+syntax enable
 " Vim UI
 "--------
 " color scheme
@@ -16,58 +16,77 @@ set background=dark
 colorscheme gruvbox
  
 " highlight current line
-au WinLeave * set nocursorline nocursorcolumn
-au WinEnter * set cursorline cursorcolumn
+au WinLeave * set nocursorline 
+au WinEnter * set cursorline 
 set cursorline
 
-" search
-set incsearch
-"set highlight 	                                                  " conflict with highlight current line
-set ignorecase
-set smartcase
 
+set noequalalways   " all windows not same size after split or close
+" search
+set ignorecase "  case insensitive
+set smartcase  "  use case if any caps used 
+set incsearch  "  show match as search proceeds
+set hlsearch   "  search highlighting
 
 " editor settings
 set history=1000
 set nocompatible
-set nofoldenable                                                  " disable folding"
-"set confirm                                                       " prompt when existing from an unsaved file
-set backspace=indent,eol,start                                    " More powerful backspacing
-set t_Co=256                                                      " Explicitly tell vim that the terminal has 256 colors "
-set mouse=a                                                       " use mouse in all modes
-set report=0                                                      " always report number of lines changed                "
-set nowrap                                                        " dont wrap lines
-set scrolloff=5                                                   " 5 lines above/below cursor when scrolling
-set number                                                        " show line numbers
-set showmatch                                                     " show matching bracket (briefly jump)
-set showcmd                                                       " show typed command in status bar
+set nofoldenable                           " disable folding"
+"set confirm                               " prompt when existing from an unsaved file
+set backspace=indent,eol,start             " More powerful backspacing
+set t_Co=256                               " Explicitly tell vim that the terminal has 256 colors
+set mouse=a				   " use mouse in all modes
+set report=0                               " always report number of lines changed     
+set scrolloff=5                            " 5 lines above/below cursor when scrolling
+set number                                 " show line numbers
+set showmatch                              " show matching bracket (briefly jump)
+set showcmd                                " show typed command in status bar
 set showmode
-set title                                                         " show file in titlebar
-set laststatus=2                                                  " use 2 lines for the status bar
-set matchtime=2                                                   " show matching bracket for 0.2 seconds
-set directory=~/.vim/tmp                                          " move swp file to /tmp
-
+set title                                  " show file in titlebar
+set laststatus=2                           " use 2 lines for the status bar
+set matchtime=2                            " show matching bracket for 0.2 seconds
+set directory=~/.vim/tmp                   " move swp file to /tmp
 " Default Indentation
-set autoindent
-set expandtab       " expand tab to space
-set smartindent     " indent when
-set tabstop=8       " tab width
-set softtabstop=8   " backspace
-set shiftwidth=8    " indent width
 set textwidth=79
-set cindent
-set timeoutlen=300
+"set tw=80
 
- set smarttab      " insert tabs on the start of a line according to shiftwidth, not tabstop
+set timeoutlen=300		" response time
+" format
+set tabstop=8 
+
+
+set shiftwidth=8
+set autoindent
+set smartindent
+set cindent
+set smarttab      " insert tabs on the start of a line according to shiftwidth, not tabstop
 " set statusline = %F%m%r%h%w\ [FOMAT=%{&ff}]\ [TYPE=%Y]\ [PS=%l,%v][%p%%]\ [BUFFER=%n]\ %{strftime('%c')}
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " AutoCompl Pop Config 
 set complete+=kspell
 set completeopt=menuone,longest
-inoremap <expr> <Right> pumvisible() ? "<C-y>" : "<Right>"
+
+" open terminal 
+nnoremap <F9> :wa<CR>:vertical botright term ++kill=term<CR>
+" close terminal
+tnoremap <F12> <C-w>:q!<CR>
+
+" navigate suggestions
 inoremap <expr> <Left> pumvisible() ? "<C-e>" : "<left>" 
 inoremap <expr> <Esc> pumvisible() ? "<C-e>" : "<Esc>"
-inoremap <expr> <Tab> pumvisible() ? "<C-e>" : "<Tab>"
+inoremap <expr> <Tab> pumvisible() ? "<C-y>" : "<Tab>"
+
+" some options
+set fcs=vert:│ " solid vsplit separator
+set virtualedit=onemore " virtual space at eol
+set autoread " auto reload
+set list " invisable chars
+set listchars=tab:▸\ ,extends:❯,precedes:❮,nbsp:␣
+set scrolloff=6 " minimal lines below cursor
+set shell=bash
+
+
+
 
 
 " Saving On Insert Mode
@@ -79,8 +98,8 @@ let mapleader = '\<Space>'
 " moving lines up and down
 nnoremap <A-Down> :m .+1<CR>==
 nnoremap <A-Up> :m .-2<CR>==
-inoremap <A-Down> :m .+1<CR>==gi
-inoremap <A-Up> :m .-2<CR>==gi
+inoremap <A-Down> <esc>:m .+1<CR>==gi
+inoremap <A-Up> <esc>:m .-2<CR>==gi
 vnoremap <A-Down> :m '>+1<CR>gv==gv
 vnoremap <A-Up> :m '<-2<CR>gv==gv
 
@@ -177,6 +196,10 @@ autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | end
  ""       \ 'coc-prettier',
  ""       \ 'coc-json',
  ""       \ ]
+ 
+
+
+ 
 " Vim LPS
 if executable('pyls')
     " pip install python-language-server
@@ -258,18 +281,23 @@ let NERDTreeShowBookmarks=1
 let NERDTreeWinPos = "right"
 let g:Powerline_symbols = 'fancy'
 
+
+
+
+" i dont use the snippets manager Ultisps but im using snipMate
+"
 " Trigger configuration. You need to change this to something else than <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+"let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsJumpForwardTrigger="<c-b>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
+"let g:UltiSnipsEditSplit="vertical"
 
 " SuperTab
 " let g:SuperTabDefultCompletionType='context'
-let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
-let g:SuperTabRetainCompletionType=2
+"let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
+"let g:SuperTabRetainCompletionType=2
 
 " ctrlp
 set wildignore+=*/tmp/*,*.so,*.o,*.a,*.obj,*.swp,*.zip,*.pyc,*.pyo,*.class,.DS_Store  " MacOSX/Linux
@@ -293,7 +321,7 @@ nnoremap <c-Down> <c-w>j
 nnoremap <c-Up> <c-w>k
 nnoremap <c-Left> <c-w>h
 nnoremap <c-Right> <c-w>l
-
+"map <c-w> <c-w><c-w>
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost *
       \ if ! exists("g:leave_my_cursor_position_alone") |
