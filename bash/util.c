@@ -1,4 +1,4 @@
-nclude "header.h"
+#include "header.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
