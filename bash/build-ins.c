@@ -6,10 +6,38 @@
 #include <string.h>
 
 /**
-* X - 
-* @a: 
+* free_struct_cmd - free the array of pointers to structs
+* @result: array of pointers to struct
 *
-* Return:
+* Return: void
+*/
+
+void free_struct_cmd(cmd_t **result)
+{
+	int i = 0;
+
+	while (1)
+	{
+		if (!result[i]->command)
+			break;
+		free(result[i]->args);
+		free(result[i]->command);
+		free(result[i]);
+		i++;
+
+	}
+	/* free last struct containing { NULL NULL '\0'}*/
+	free(result[i]);
+	/* free the array of pointer to struct*/
+	free(result);
+
+}
+/**
+* _trim - get ride off all space and '\n' and '\t' from a string and allocate
+* it to the heap
+* @str: line
+* @GC: pointet to gc
+* Return: pointer
 */
 
 char *_trim(char **str, gc *GC)
@@ -50,10 +78,11 @@ char *_trim(char **str, gc *GC)
 
 
 /**
-* X - 
-* @a: 
+* create_struct - create struct from the first toke found in a string command ,
+* args and the operator
+* @line: pointer to a string
 *
-* Return:
+* Return: newStruct
 */
 
 cmd_t *create_struct(char **line)
@@ -81,7 +110,7 @@ cmd_t *create_struct(char **line)
 			while (*ptr != ' ')
 				ptr++;
 			*ptr = '\0';
-			ptr ++;
+			ptr++;
 			cmd->command = _copAlloc(com, 0);
 			cmd->args = _copAlloc(ptr, 0);
 			return (cmd);
@@ -94,10 +123,10 @@ cmd_t *create_struct(char **line)
 	return (cmd);
 }
 /**
-* X - 
-* @a: 
+* parseLine - trim the line given fillling an array of cmd_t and return it
+* @line: char *
 *
-* Return:n
+* Return: array of pointer to cmd_t
 */
 
 cmd_t **parseLine(char *line)
@@ -108,11 +137,11 @@ cmd_t **parseLine(char *line)
 	cmd_t *test;
 	char *ptr;
 	int i = 0, len = 0;
-	
 
-	GC.str_coll = malloc(sizeof(char * ) * 500);
+
+	GC.str_coll = malloc(sizeof(char *) * 500);
 	GC.length = 0;
-	ptr = _trim(&line , &GC);
+	ptr = _trim(&line, &GC);
 	len = 0;
 	while (len < 10)
 	{
@@ -132,42 +161,26 @@ cmd_t **parseLine(char *line)
 			break;
 		i++;
 	}
-	i = 0;
-	while (i < len)
-	{
-		if (!result[i]->command)
-			break;
-		free(result[i]->args);
-		free(result[i]->command);
-		free(result[i]);
-		i++;
-
-	}
-	free(result[i]);
-	free(result);
+	free_struct_cmd(result);
 	free_Garbage_coll(&GC);
-	/*
- * */
-
 	return (result);
 }
 
 /**
-* main - 
+* main - parsing a line into multiple struct
 * @argc: nb of arguments
 * @argv: arguments
 *
 * Return: 0
-* Error: 1
+* Error: -1
 */
 int main(int argc, char *argv[])
 {
 	char *str = " ls -   l     ||       echo      sh        ";
-	
+
 	char *ptr;
 
 	parseLine(str);
 
-	//printf(" after =%s\n",ptr);
 	return (0);
 }
