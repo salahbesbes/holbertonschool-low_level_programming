@@ -71,7 +71,7 @@ int main(int argc, char *argv[])
 	{
 		if (readChar < 0)
 			_exitt(98, argv[1], 0);
-		else
+		else if (readChar > 0)
 		{
 			writenChar = write(cpTo, buf, readChar);
 			if (writenChar != readChar)
