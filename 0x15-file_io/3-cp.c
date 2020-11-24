@@ -72,9 +72,9 @@ int main(int argc, char *argv[])
 		if (readChar < 0)
 			_exitt(98, argv[1], 0);
 		writenChar = write(cpTo, buf, readChar);
-		if (writenChar != readChar)
-			_exitt(99, argv[2], 0);
 	}
+	if (writenChar != readChar)
+		_exitt(99, argv[2], 0);
 	checkExit = close(cpTo);
 	if (checkExit < 0)
 		_exitt(100, NULL, cpTo);
