@@ -12,10 +12,6 @@ size_t print_listint(const listint_t *h)
 {
 	size_t count = 0;
 
-<<<<<<< HEAD
-
-=======
->>>>>>> c2c734b... fix any diff
 	while (h)
 	{
 		printf("%d\n", h->n);
