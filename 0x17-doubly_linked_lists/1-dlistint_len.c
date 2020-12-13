@@ -1,10 +1,10 @@
 #include "lists.h"
 
 /**
-* name - des
-* @arg1: des
+* dlistint_len - get length
+* @h: head
 *
-* Return: 1
+* Return: int
 */
 size_t dlistint_len(const dlistint_t *h)
 {
