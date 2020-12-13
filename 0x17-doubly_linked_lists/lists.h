@@ -1,11 +1,8 @@
-
-#ifndef GARD
-#define GARD
-
-
-#include <stdlib.h>
+#ifndef _LIST_H_
+#define _LIST_H_
+#include <unistd.h>
 #include <stdio.h>
-#include <stddef.h>
+#include <stdlib.h>
 
 /**
  * struct dlistint_s - doubly linked list
@@ -32,5 +29,4 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index);
 int sum_dlistint(dlistint_t *head);
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n);
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index);
-
 #endif
