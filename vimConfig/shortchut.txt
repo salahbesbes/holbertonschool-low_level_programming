@@ -1,0 +1,10 @@
+git remote set-url origin https://<USERNAME>:<PASSWORD>@github.com/path/to/repo.git
+
+replace /tree/master by trunk and use :
+svn checkout https://github.com/lodash/lodash/trunk/test
+
+
+command to install autopep8 ( linters and checkers (vim)):
+sudo apt install python3-autopep8 ==> fixer for python
+sudo apt install pylint or other linter ==> for error detection
+sudo pip  install --upgrade jedi==0.16.0 (jedi 0.17 bugged) => autocomplete for python
