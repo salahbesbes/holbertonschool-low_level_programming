@@ -40,6 +40,16 @@ hash_node_t *add_node(hash_node_t **head, const char *key, const char *value)
 	return (current);
 }
 
+/**
+  * check_existance - check if the key in the hash table exists if it does
+  * we replace free old and replace it if it dont exist we return 1 (else 0)
+  * @ht: struct that hold the hash table
+  * @key: key string
+  * @value: value mapped to the key
+  * @idx: index of the head of list
+  *
+  * Return:  1 if it does not exist else 0
+  */
 int check_existance(hash_table_t *ht, const char *key,
 		int idx, const char *value)
 {
@@ -77,7 +87,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 
 	idx = key_index((const unsigned char *)key, ht->size);
-	res = check_existance(ht, key, idx);
+	res = check_existance(ht, key, idx, value);
 	if (!res)
 		return (0);
 	result = add_node(&(ht->array[idx]), key, value);
