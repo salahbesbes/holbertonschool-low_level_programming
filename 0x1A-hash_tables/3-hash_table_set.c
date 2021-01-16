@@ -44,8 +44,7 @@ hash_node_t *add_node(hash_node_t **head, const char *key, const char *value)
   */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	int idx = 0, i = 0;
-	int key_length = 0, value_length = 0;
+	int idx = 0;
 
 	if (!key || *key == '\0')
 		return (0);
