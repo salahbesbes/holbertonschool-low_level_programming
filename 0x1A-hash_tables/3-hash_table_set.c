@@ -109,7 +109,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	idx = key_index((const unsigned char *)key, ht->size);
 
-	result = add_node_end(&(ht->array[idx]), key, value);
+	result = add_node((hash_node_t **)&(ht->array[idx]), key, value);
 	if (!result)
 		return (0);
 	return (1);
