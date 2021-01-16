@@ -40,6 +40,7 @@ hash_node_t *add_node(hash_node_t **head, const char *key, const char *value)
 	return (current);
 }
 
+
 /**
   * hash_table_set - append the key value data to the hashed table
   * at the correct index
@@ -52,12 +53,15 @@ hash_node_t *add_node(hash_node_t **head, const char *key, const char *value)
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	int idx = 0;
+	hash_node_t *result = NULL;
 
 	if (!key || *key == '\0' || value == NULL)
 		return (0);
 
 	idx = key_index((const unsigned char *)key, ht->size);
 
-	add_node(&(ht->array[idx]), key, value);
+	result = add_node(&(ht->array[idx]), key, value);
+	if (!result)
+		return (0);
 	return (1);
 }
