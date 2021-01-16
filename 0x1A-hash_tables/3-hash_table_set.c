@@ -1,5 +1,6 @@
 
 #include "hash_tables.h"
+#include <stdlib.h>
 #include <string.h>
 
 /**
@@ -12,7 +13,6 @@
 */
 hash_node_t *add_node(hash_node_t **head, const char *key, const char *value)
 {
-
 
 	hash_node_t *current = NULL;
 
@@ -40,58 +40,8 @@ hash_node_t *add_node(hash_node_t **head, const char *key, const char *value)
 	return (current);
 }
 
-
-/**
-* add_node_end - add anode to the last position
-* @head: pointer to the head of the list
-* @str: string
-*
-* Return: pointer to the header
-*/
-
-hash_node_t *add_node_end(hash_node_t **head, const char *key, const char *value)
-{
-	hash_node_t *newNode = NULL;
-	hash_node_t *last = *head;
-
-	if (!key)
-		return (NULL);
-	newNode = malloc(sizeof(hash_node_t));
-	if (!newNode)
-		return (NULL);
-	newNode->next = NULL;
-	newNode->key = strdup(key);
-	if (newNode->key == NULL)
-	{
-		free(newNode);
-		return (NULL);
-	}
-	newNode->value = strdup(value);
-	if (!newNode->value)
-	{
-		free(newNode->key);
-		free(newNode);
-		return (NULL);
-	}
-	/* if the list is empty*/
-	if (*head == NULL)
-	{
-		*head = newNode;
-		return (newNode);
-		/* we return generaly the first node (head)*/
-	}
-
-	/* we move the pointer last until the last node */
-
-	while (last->next)
-		last = last->next;
-
-	/* we add apointer that point to the newNode*/
-	last->next = newNode;
-
-	return (newNode);
-}
-int check_existance(hash_table_t *ht, const char *key, int idx)
+int check_existance(hash_table_t *ht, const char *key,
+		int idx, const char *value)
 {
 	hash_node_t *current = NULL;
 
@@ -99,7 +49,11 @@ int check_existance(hash_table_t *ht, const char *key, int idx)
 	while (current)
 	{
 		if (strcmp(current->key, key) == 0)
+		{
+			free(current->value);
+			current->value = strdup(value);
 			return (0);
+		}
 		current = current->next;
 	}
 	return (1);
