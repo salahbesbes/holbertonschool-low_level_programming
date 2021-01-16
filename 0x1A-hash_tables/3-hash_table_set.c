@@ -46,7 +46,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	int idx = 0;
 
-	if (!key || *key == '\0')
+	if (!key || *key == '\0' || value == NULL)
 		return (0);
 
 	idx = key_index((const unsigned char *)key, ht->size);
