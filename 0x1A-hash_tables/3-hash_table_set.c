@@ -1,5 +1,6 @@
 
 #include "hash_tables.h"
+#include <stdlib.h>
 
 /**
 * add_node - adds a new node at the beginning of a list_t list.
@@ -27,6 +28,12 @@ hash_node_t *add_node(hash_node_t **head, const char *key, const char *value)
 		return (NULL);
 	}
 	current->value = strdup(value);
+	if (!current->value)
+	{
+		free(current->key);
+		free(current);
+		return (NULL);
+	}
 	current->next = *head;
 	*head = current;
 
