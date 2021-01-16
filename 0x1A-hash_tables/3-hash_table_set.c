@@ -1,9 +1,8 @@
 
 #include "hash_tables.h"
-#include <stdlib.h>
 
 /**
-* add_node - adds a new node at the beginning of a list_t list.
+* add_node - adds a new node at the beginning of a hash_node_t list.
 * @head: a pointer header
 * @key: string
 * @value: value mapped to key
@@ -42,6 +41,56 @@ hash_node_t *add_node(hash_node_t **head, const char *key, const char *value)
 
 
 /**
+* add_node_end - add anode to the last position
+* @head: pointer to the head of the list
+* @str: string
+*
+* Return: pointer to the header
+*/
+
+hash_node_t *add_node_end(hash_node_t **head, const char *key, const char *value)
+{
+	hash_node_t *newNode = NULL;
+	hash_node_t *last = *head;
+
+	if (!key)
+		return (NULL);
+	newNode = malloc(sizeof(hash_node_t));
+	if (!newNode)
+		return (NULL);
+	newNode->next = NULL;
+	newNode->key = strdup(key);
+	if (newNode->key == NULL)
+	{
+		free(newNode);
+		return (NULL);
+	}
+	newNode->value = strdup(value);
+	if (!newNode->value)
+	{
+		free(newNode->key);
+		free(newNode);
+		return (NULL);
+	}
+	/* if the list is empty*/
+	if (*head == NULL)
+	{
+		*head = newNode;
+		return (newNode);
+		/* we return generaly the first node (head)*/
+	}
+
+	/* we move the pointer last until the last node */
+
+	while (last->next)
+		last = last->next;
+
+	/* we add apointer that point to the newNode*/
+	last->next = newNode;
+
+	return (newNode);
+}
+/**
   * hash_table_set - append the key value data to the hashed table
   * at the correct index
   * @key: string key
@@ -60,7 +109,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	idx = key_index((const unsigned char *)key, ht->size);
 
-	result = add_node(&(ht->array[idx]), key, value);
+	result = add_node_end(&(ht->array[idx]), key, value);
 	if (!result)
 		return (0);
 	return (1);
