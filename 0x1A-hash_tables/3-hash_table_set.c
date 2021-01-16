@@ -89,7 +89,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	idx = key_index((const unsigned char *)key, ht->size);
 	res = check_existance(ht, key, idx, value);
 	if (!res)
-		return (0);
+		return (1);
 	result = add_node(&(ht->array[idx]), key, value);
 	if (!result)
 		return (0);
