@@ -55,7 +55,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	int idx = 0;
 	hash_node_t *result = NULL;
 
-	if (!key || *key == '\0' || value == NULL)
+	if (!key || *key == '\0' || !value)
 		return (0);
 
 	idx = key_index((const unsigned char *)key, ht->size);
