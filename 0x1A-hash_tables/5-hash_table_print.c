@@ -12,6 +12,8 @@ void hash_table_print(const hash_table_t *ht)
 	unsigned long int i = 0, empty = 1;
 	char *sep = ", ";
 
+	if (!ht)
+		return;
 	printf("{");
 	for (i = 0; i < ht->size; ++i)
 	{
@@ -23,6 +25,9 @@ void hash_table_print(const hash_table_t *ht)
 			while (current)
 			{
 				printf("'%s': '%s'", current->key, current->value);
+				if (current->next)
+					printf("%s", sep);
+
 				current = current->next;
 			}
 			if (empty)
