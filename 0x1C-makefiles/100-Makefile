@@ -6,9 +6,7 @@ OBJ = $(SRC:.c=.o)
 NAME = holberton
 CFLAGS := -Wall -Werror -Wextra -pedantic
 FLAG = $(CFLAGS)
-ifndef RM
 RM = rm -f
-endif
 all: $(OBJ)
 	$(CC) $(FLAG) $(OBJ) -o  $(NAME)
 clean:
