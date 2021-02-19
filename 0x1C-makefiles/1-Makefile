@@ -1,8 +1,7 @@
 
-.PHONY = all
 
-SRC=$(wildcard *.c)
-CC=gcc
+SRC = main.c holberton.c
+CC = gcc
 
 all: $(SRC)
 	$(CC) $(SRC) -o holberton
