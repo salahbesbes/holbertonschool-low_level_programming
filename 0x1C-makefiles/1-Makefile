@@ -1,0 +1,9 @@
+
+.PHONY = all clean
+
+SRC=${wildcard *.c}
+CC = gcc
+
+all: ${SRC}
+	${CC} ${SRC} -o holberton
+
