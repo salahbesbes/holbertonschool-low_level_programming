@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+""" no module """
 
 
 def calcul_per(line):
