@@ -1,9 +1,9 @@
 
 .PHONY = all
 
-SRC := ${wildcard *.c}
-CC := gcc
+SRC=$(wildcard *.c)
+CC=gcc
 
-all: ${SRC}
-	${CC} ${SRC} -o holberton
+all: $(SRC)
+	$(CC) $(SRC) -o holberton
 
