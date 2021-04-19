@@ -8,4 +8,5 @@
 
 
 int linear_search(int pInt[10], size_t size, int i);
+int binary_search(int pInt[10], size_t size, int i);
 #endif
