@@ -3,6 +3,8 @@ git remote set-url origin https://<USERNAME>:<PASSWORD>@github.com/path/to/repo.
 replace /tree/master by trunk and use :
 svn checkout https://github.com/lodash/lodash/trunk/test
 
+mkdir -p ~/.local/share/fonts
+cd ~/.local/share/fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.ttf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.ttf
 
 command to install autopep8 ( linters and checkers (vim)):
 sudo apt install python3-autopep8 ==> fixer for python

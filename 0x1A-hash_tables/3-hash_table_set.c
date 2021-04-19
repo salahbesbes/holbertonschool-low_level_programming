@@ -62,6 +62,11 @@ int check_existance(hash_table_t *ht, const char *key,
 		{
 			free(current->value);
 			current->value = strdup(value);
+			if (!current->value)
+			{
+				free(current->key);
+				free(current);
+			}
 			return (0);
 		}
 		current = current->next;
