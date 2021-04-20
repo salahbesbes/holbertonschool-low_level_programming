@@ -60,14 +60,14 @@ int search_interval(int *ar, int start, int end, int val)
 		else if (val < ar[mid])
 		{
 			mid -= 1;
-			print_array(ar, start, start + mid);
+			print_array(ar, start, mid);
 			return (search_interval(ar, start, start + mid, val));
 		}
 		else
 		{
 			mid += 1;
 			print_array(ar, end - mid, end);
-			return (search_interval(ar, end - mid, end, val));
+			return (search_interval(ar, mid, end, val));
 		}
 	}
 	return (-1);
