@@ -1,6 +1,5 @@
 #include "search_algos.h"
 
-
 int search_interval(int *ar, int start, int end, int val);
 
 /**
@@ -26,18 +25,18 @@ void print_array(int *ar, int start, int end)
 
 /**
  * binary_search - binary_search
- * @pInt: array
+ * @array: array
  * @size: length of the array
- * @i: value we search
+ * @value: value we search
  * Return: index of the value if found or (-1)
  */
-int binary_search(int pInt[10], size_t size, int i)
+int binary_search(int *array, size_t size, int value)
 {
-	if (pInt == NULL)
+	if (array == NULL)
 		return (-1);
 
-	print_array(pInt, 0, (int) size);
-	return (search_interval(pInt, 0, (int) size, i));
+	print_array(array, 0, (int)size);
+	return (search_interval(array, 0, (int)size, value));
 }
 
 /**
@@ -62,7 +61,6 @@ int search_interval(int *ar, int start, int end, int val)
 		{
 			print_array(ar, start, start + mid);
 			return (search_interval(ar, start, start + mid, val));
-
 		}
 		else
 		{
@@ -72,5 +70,4 @@ int search_interval(int *ar, int start, int end, int val)
 		}
 	}
 	return (-1);
-
 }
