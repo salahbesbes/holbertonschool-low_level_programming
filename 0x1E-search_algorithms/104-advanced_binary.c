@@ -11,16 +11,16 @@ int search_interval(int *ar, int start, int end, int val);
  */
 void print_array(int *ar, int start, int end)
 {
-    int i;
-    char sep = ',';
+	int i;
+	char sep = ',';
 
-    printf("Searching in array:");
-    for (i = start; i <= end; i++)
-    {
-        if (i == end)
-            sep = '\n';
-        printf(" %d%c", ar[i], sep);
-    }
+	printf("Searching in array:");
+	for (i = start; i <= end; i++)
+	{
+		if (i == end)
+			sep = '\n';
+		printf(" %d%c", ar[i], sep);
+	}
 }
 
 /**
@@ -32,26 +32,25 @@ void print_array(int *ar, int start, int end)
  */
 int advanced_binary(int *array, size_t size, int value)
 {
-    if (array == NULL && size > 0)
-        return (-1);
+	if (array == NULL && size > 0)
+		return (-1);
 
-    // print_array(array, 0, (int)size);
-    return (search_interval(array, 0, (int)size - 1, value));
+	return (search_interval(array, 0, (int)size - 1, value));
 }
 
 /**
  * recur_check_for_occurence - return the first index occurence of a value
  * @arr: array of int sorted
  * @index: indef of val already found
- * @val: val we want search for the 
+ * @val: val we want search for the
  * Return: first occurence index
  */
 
 int recur_check_for_occurence(int *arr, int index, int val)
 {
-    if (arr[index - 1] != val)
-        return (index);
-    return (recur_check_for_occurence(arr, index - 1, val));
+	if (arr[index - 1] != val)
+		return (index);
+	return (recur_check_for_occurence(arr, index - 1, val));
 }
 
 /**
@@ -64,27 +63,25 @@ int recur_check_for_occurence(int *arr, int index, int val)
  */
 int search_interval(int *ar, int start, int end, int val)
 {
-    int mid = (end + start) / 2;
+	int mid = (end + start) / 2;
 
-    print_array(ar, start, end);
+	print_array(ar, start, end);
 
-    if (end >= start)
-    {
+	if (end >= start)
+	{
+		if (val == ar[mid])
+		{
+			return (recur_check_for_occurence(ar, mid, val));
+		}
 
-        if (val == ar[mid])
-        {
-
-            return (recur_check_for_occurence(ar, mid, val));
-        }
-
-        else if (val < ar[mid])
-        {
-            return (search_interval(ar, start, mid - 1, val));
-        }
-        else
-        {
-            return (search_interval(ar, mid + 1, end, val));
-        }
-    }
-    return (-1);
+		else if (val < ar[mid])
+		{
+			return (search_interval(ar, start, mid - 1, val));
+		}
+		else
+		{
+			return (search_interval(ar, mid + 1, end, val));
+		}
+	}
+	return (-1);
 }
