@@ -1,28 +1,4 @@
 #include "search_algos.h"
-
-int search_interval(int *ar, int start, int end, int val);
-
-/**
- * print_array - print an array
- * @ar: array
- * @start: start index
- * @end: end of the array
- * Return: void
- */
-void print_array(int *ar, int start, int end)
-{
-	int i;
-	char sep = ',';
-
-	printf("Searching in array:");
-	for (i = start; i <= end; i++)
-	{
-		if (i == end)
-			sep = '\n';
-		printf(" %d%c", ar[i], sep);
-	}
-}
-
 /**
  * interpolation_search - binary_search
  * @array: array
@@ -34,7 +10,7 @@ int interpolation_search(int *array, size_t size, int value)
 {
 	int pos, end = (int)size - 1, start = 0;
 
-	if (array == NULL)
+	if (array == NULL && size > 0)
 		return (-1);
 
 	while (start <= end && value >= array[start] && value <= array[end])
