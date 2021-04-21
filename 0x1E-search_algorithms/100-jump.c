@@ -1,5 +1,4 @@
 #include "search_algos.h"
-
 /**
  * jump_search - The basic idea is to check fewer element
  * by jumping ahead by fixed steps or skipping some elements
@@ -11,7 +10,7 @@
  */
 int jump_search(int *array, size_t size, int value)
 {
-	int step = 3, count = 0;
+	int step = sqrt(size), count = 0;
 
 	if (array == NULL)
 		return (-1);
