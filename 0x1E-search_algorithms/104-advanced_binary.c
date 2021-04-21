@@ -1,6 +1,6 @@
 #include "search_algos.h"
 
-int search_interval(int *ar, int start, int end, int val);
+
 
 /**
  * print_array - print an array
