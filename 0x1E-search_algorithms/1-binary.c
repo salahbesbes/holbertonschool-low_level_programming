@@ -52,7 +52,7 @@ int search_interval(int *arr, int start, int end, int val)
 
 	while (end - 1 >= start)
 	{
-		mid = (end + start) / 2;
+		mid = (end - 1 + start) / 2;
 
 		print_array(arr, start, end);
 
