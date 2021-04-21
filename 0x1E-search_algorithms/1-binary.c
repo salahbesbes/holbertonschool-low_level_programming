@@ -15,9 +15,9 @@ void print_array(int *ar, int start, int end)
 	char sep = ',';
 
 	printf("Searching in array:");
-	for (i = start; i < end; i++)
+	for (i = start; i <= end; i++)
 	{
-		if (i == end - 1)
+		if (i == end)
 			sep = '\n';
 		printf(" %d%c", ar[i], sep);
 	}
@@ -32,36 +32,20 @@ void print_array(int *ar, int start, int end)
  */
 int binary_search(int *array, size_t size, int value)
 {
+	int mid, end = (int)size - 1, start = 0;
+
 	if (array == NULL)
 		return (-1);
 
-	return (search_interval(array, 0, (int)size, value));
-}
-
-/**
- * search_interval - binary search
- * @arr: array of int
- * @start: start of the segment of the array
- * @end: length of segment of the array
- * @val: search value
- * Return: index if found or -1
- */
-int search_interval(int *arr, int start, int end, int val)
-{
-	int mid;
-
-	while (end - 1 >= start)
+	while (end >= start)
 	{
-		mid = (end - 1 + start) / 2;
+		mid = (end + start) / 2;
 
-		print_array(arr, start, end);
+		print_array(array, start, end);
 
-		if (arr[mid] == val)
-		{
-			print_array(arr, mid, end);
+		if (array[mid] == value)
 			return (mid);
-		}
-		else if (arr[mid] < val)
+		else if (array[mid] < value)
 			start = mid + 1;
 		else
 			end = mid - 1;
