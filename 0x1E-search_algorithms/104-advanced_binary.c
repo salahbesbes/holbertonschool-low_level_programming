@@ -32,7 +32,7 @@ void print_array(int *ar, int start, int end)
  */
 int advanced_binary(int *array, size_t size, int value)
 {
-	if (array == NULL && size > 0)
+	if (array == NULL || size < 1)
 		return (-1);
 
 	return (search_interval(array, 0, (int)size - 1, value));
@@ -76,7 +76,10 @@ int search_interval(int *ar, int start, int end, int val)
 
 		else if (val < ar[mid])
 		{
-			return (search_interval(ar, start, mid - 1, val));
+			if (search_interval(ar, start, mid - 1, val) != -1)
+				return (recur_check_for_occurence(ar, mid, val));
+			else
+				return (-1);
 		}
 		else
 		{
