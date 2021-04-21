@@ -8,10 +8,11 @@
  */
 int interpolation_search(int *array, size_t size, int value)
 {
-	int pos, end = (int)size - 1, start = 0;
+	int pos, end, start = 0;
 
-	if (array == NULL && size > 0)
+	if (array == NULL && size < 1)
 		return (-1);
+	end = (int)size - 1;
 
 	while (start <= end && value >= array[start] && value <= array[end])
 	{
