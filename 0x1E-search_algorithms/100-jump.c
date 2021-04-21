@@ -1,4 +1,5 @@
 #include "search_algos.h"
+#include <math.h>
 /**
  * jump_search - The basic idea is to check fewer element
  * by jumping ahead by fixed steps or skipping some elements
@@ -47,7 +48,7 @@ int my_linear_search(int *ar, int start, int length, int val)
 
 	if (ar == NULL)
 		return (position);
-	for (j = start; j <= length; ++j)
+	for (j = start; j < length; ++j)
 	{
 		printf("Value checked array[%d] = [%d]\n", j, ar[j]);
 		if (ar[j] == val)
