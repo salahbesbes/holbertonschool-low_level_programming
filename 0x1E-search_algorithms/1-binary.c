@@ -35,40 +35,33 @@ int binary_search(int *array, size_t size, int value)
 	if (array == NULL)
 		return (-1);
 
-	print_array(array, 0, (int)size);
 	return (search_interval(array, 0, (int)size, value));
 }
 
 /**
  * search_interval - binary search
- * @ar: array of int
+ * @arr: array of int
  * @start: start of the segment of the array
  * @end: length of segment of the array
  * @val: search value
  * Return: index if found or -1
  */
-int search_interval(int *ar, int start, int end, int val)
+int search_interval(int *arr, int start, int end, int val)
 {
-	int mid = (end - start - 1) / 2;
+	int mid;
 
-	if (end - start > 1)
+	print_array(arr, start, end);
+	while (end > start)
 	{
+		mid = (end + start) / 2;
 
-		if (val == ar[mid] || val == ar[start])
+		print_array(arr, mid, end);
+		if (arr[mid] == val)
 			return (mid);
-
-		else if (val < ar[mid])
-		{
-			mid -= 1;
-			print_array(ar, start, mid);
-			return (search_interval(ar, start, start + mid, val));
-		}
+		else if (arr[mid] < val)
+			start = mid + 1;
 		else
-		{
-			mid += 1;
-			print_array(ar, end - mid, end);
-			return (search_interval(ar, mid, end, val));
-		}
+			end = mid - 1;
 	}
 	return (-1);
 }
