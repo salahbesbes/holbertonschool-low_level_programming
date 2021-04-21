@@ -59,7 +59,6 @@ int search_interval(int *ar, int start, int end, int val)
 		print_array(ar, start, end);
 		if (ar[start] == val)
 			return (start);
-
 		if (val == ar[mid] && ar[mid - 1] != val)
 			return (mid);
 		if (val <= ar[mid])
