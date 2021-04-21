@@ -50,14 +50,18 @@ int search_interval(int *arr, int start, int end, int val)
 {
 	int mid;
 
-	print_array(arr, start, end);
-	while (end > start)
+	// print_array(arr, start, end);
+	while (end - 1 >= start)
 	{
 		mid = (end + start) / 2;
 
-		print_array(arr, mid, end);
+		print_array(arr, start, end);
+
 		if (arr[mid] == val)
+		{
+			print_array(arr, mid, end);
 			return (mid);
+		}
 		else if (arr[mid] < val)
 			start = mid + 1;
 		else
